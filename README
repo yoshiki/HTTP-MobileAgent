@@ -1,0 +1,106 @@
+NAME
+    HTTP::MobileAgent - HTTP mobile user agent string parser
+
+SYNOPSIS
+      use HTTP::MobileAgent;
+
+      my $agent = HTTP::MobileAgent->new(Apache->request);
+      # or $agent = HTTP::MobileAgent->new; to get from %ENV
+      # or $agent = HTTP::MobileAgent->new($agent_string);
+
+      if ($agent->is_docomo) {
+          # or if ($agent->name eq 'DoCoMo')
+          # or if ($agent->isa('HTTP::MobileAgent::DoCoMo'))
+          # it's NTT DoCoMo i-mode.
+          # see what's available in H::MA::DoCoMo
+      } elsif ($agent->is_j_phone) {
+          # it's J-Phone.
+          # see what's available in H::MA::JPhone
+      } elsif ($agent->is_ezweb) {
+          # it's KDDI/EZWeb.
+          # see what's available in H::MA::EZweb
+      } else {
+          # may be PC
+          # $agent is H::MA::NonMobile
+      }
+
+DESCRIPTION
+    HTTP::MobileAgent parses HTTP_USER_AGENT strings of (mainly Japanese)
+    mobile HTTP user agents. It'll be useful in page dispatching by user
+    agents.
+
+METHODS
+    Here are common methods of HTTP::MobileAgent subclasses. More agent
+    specific methods are described in each subclasses. Note that some of
+    common methods are also overrided in some subclasses.
+
+    new
+          $agent = HTTP::MobileAgent->new;
+          $agent = HTTP::MobileAgent->new($r);  # Apache or HTTP::Request
+          $agent = HTTP::MobileAgent->new($ua_string);
+
+        parses HTTP headers and constructs HTTP::MobileAgent subclass
+        instance. If no argument is supplied, $ENV{HTTP_*} is used.
+
+        Note that you nees to pass Aapche or HTTP::Requet object to new(),
+        as some mobile agents put useful information on HTTP headers other
+        than only "User-Agent:" (like "x-jphone-msname" in J-Phone).
+
+    user_agent
+          print "User-Agent: ", $agent->user_agent;
+
+        returns User-Agent string.
+
+    name
+          print "name: ", $agent->name;
+
+        returns User-Agent name like 'DoCoMo'.
+
+    is_mobile
+          if ($agent->is_mobile) {
+              # it's really a mobile agent
+          }
+
+        returns if the agent is mobile or not.
+
+    is_docomo, is_j_phone, is_ezweb
+        returns if the agent is DoCoMo or J-Phone or EZWeb.
+
+WARNINGS
+    Following warnings might be raised when $^W is on.
+
+    "%s: no match. Might be new variants. please contact the author of
+    HTTP::MobileAgent!"
+        User-Agent: string does not match patterns provided in subclasses.
+        It may be faked user-agent or a new variant. Feel free to mail me to
+        inform this.
+
+NOTE
+    "Why not adding this module as an extension of HTTP::BrowserDetect?"
+        Yep, I tried to do. But the module's code seems hard enough for me
+        to extend and don't want to bother the author for this
+        mobile-specific features. So I made this module as a separated one.
+
+MORE IMPLEMENTATIONS
+    If you have any idea / request for this module to add new subclass, I'm
+    open to the discussion or (more preferable) patches. Feel free to mail
+    me.
+
+CREDITS
+    Satoshi Tanimoto <tanimoto@cpan.org>
+    Yoshiki Kurihara <kurihara@cpan.org>
+
+AUTHOR
+    Tatsuhiko Miyagawa <miyagawa@bulknews.net>
+
+LICENSE
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
+SEE ALSO
+    the HTTP::MobileAgent::DoCoMo manpage, the HTTP::MobileAgent::JPhone
+    manpage, the HTTP::MobileAgent::EZweb manpage, the
+    HTTP::MobileAgent::NonMobile manpage, the HTTP::BrowserDetect manpage
+
+    Reference URL for specification is listed in Pods for each subclass.
+

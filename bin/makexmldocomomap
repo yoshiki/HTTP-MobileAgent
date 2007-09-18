@@ -1,0 +1,51 @@
+#!/usr/bin/perl -w
+use strict;
+use Jcode;
+use LWP::Simple;
+use Data::Dumper;
+use HTTP::MobileAgent;
+require XML::Simple;
+
+my $URL = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/screen_area/index.html';
+
+do_task(@ARGV);
+
+sub do_task {
+    my $html = Jcode->new(get($URL))->tr('£°-£¹', '0-9')->euc;
+    $html =~ s/(?:\r?\n)+/\n/g;
+    my $re = regexp();
+    my %map;
+    while ($html =~ /$re/igs) {
+	my($model, $width, $height, $color, $depth) = ($1, $2, $3, $4, $5);
+	push @{$map{terminal}}, {
+            model => uc($model),
+	    width => $width,
+	    height => $height,
+	    color => $color eq '¥«¥é¡¼',
+	    depth => $depth,
+	};
+    }
+    output_code(\%map);
+}
+
+sub output_code {
+    my($map) = @_;
+    my $xml = XML::Simple->new;
+    printf <<'TEMPLATE', $xml->XMLout($map);
+<?xml version="1.0" ?>
+%s
+TEMPLATE
+    ;
+}
+
+sub regexp {
+    return <<'RE';
+<TD><FONT SIZE="2">([A-Z]+\d+\w*\+?).*?</FONT></TD>
+<TD><FONT SIZE="2">.*?(?:</FONT></TD>)?
+<TD><FONT SIZE="2">.*?(?:</FONT></TD>)?
+<TD><FONT SIZE="2">.*?(\d+)¡ß(\d+).*?</FONT></TD>
+<TD><FONT SIZE="2">.*?</FONT></TD>
+<TD><FONT SIZE="2">(Çò¹õ|¥«¥é¡¼)(?:.*?)(\d+)(?:¿§|³¬Ä´)</FONT></TD>
+RE
+    ;
+}

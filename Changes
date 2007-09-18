@@ -1,0 +1,156 @@
+Revision history for Perl extension HTTP::MobileAgent
+
+0.26_01 Thu Aug  9 17:08:05 2007
+    * Supported funny mobile search crawler.
+      eg. J-Phone/5.0/J-SH03
+          Nokia6820/2.0 (4.83) Profile/MIDP-1.0 Configuration/CLDC-1.0
+      (Thanks to Akira Kamikura and Tokuhiro MATSUNO)
+    - Added L600I L601I M702IS M702IG L602I F902IS SO902IWP+
+      N902IX N902IL N702IS P702ID D702IF F882IES N601I D800IDS
+      P703I F883I P704I SH903I P903I N903I D903I F903I SO903I
+      D903ITV F903IX P903ITV SH903ITV F903IBSC P903IX SO903ITV
+      N703ID F703I P703I D703I SH703I N703I SO703I SH904I N904I
+      F904I D904I P904I SO704I F704I N704I SH704I D704I F883IES
+      in DoCoMoMap.xml (auto-generated)
+    - Added D903ITV SO903ITV F704I SO703I L602I D800IDS D703I D702IF
+      SH904I P702ID P703I L601I M702IS F903IBSC N904I D903I F703I
+      P704I SH704I N702IS F904I F883I P903I N703ID M702IG N601I SO903I
+      P904I SH703I F903I N902IL N704I P903IX N703I N903I D904I
+      P903ITV SO704I SH903I SH903ITV F903IX N902IX F882IES D704I F883IES
+      in DoCoMoDisplayMap (auto-generated)
+
+0.26 Thu Aug 17 17:40:26 2006
+    * Added 'SoftBank' user agent support in Vodafone
+    * Added is_softbank utility method in Vodafone
+    * Added type method in Vodafone
+      (Thanks to Akinori MUSHA)
+    * Added xhtml_compliant method in DoCoMo
+      (Thanks to Atsushi Kobayashi)
+    * Fixed problem that make(xml)?docomomap programs
+      had invalid url.
+      (Thanks to Masahiro Chiba)
+    * Changed DOCOMO_MAP XML layout for DoCoMoDisplayMap
+      because there is XML invalid model in DoCoMo (SO902iWP+)
+      but old XML layout was supported too.
+    - Added D702I, D702IBCL, D851IWM, D902IS, F702ID, F881IES,
+      F902IS, L600I, N506ISII, N600I, N701IECO, N702ID, N902IS,
+      NM850IG, P506ICII, P702I, P901ITV, P902IS, SA702I, SA800I,
+      SH702ID, SH702IS, SH902IS, SH902ISL, SO702I, SO902I, SO902IWP+
+      in DoCoMoDisplayMap (auto-generated)
+
+0.25 Wed Feb  8 23:14:05 JST 2006
+    * Fixed problem that make(xml)?docomomap programs couldn't parse
+      current web page exactly.
+      (Thanks to Tokuhiro MATSUNO)
+    - Added D701i, D701iWM, D901iS, D902i, F700iS, F901iS, F902i,
+      N701i, N901iS, N902i, P701iD, P851i, P901iS, P902i, SA700iS,
+      SH700iS, SH851i, SH901iS, SH902i, SO213iWR, SO506iS
+      in DoCoMoDisplayMap (auto-generated)
+    * Added WX310K,WS300K,WX310SA (Air H" Phone)
+    * name returns 'DDIPOCKET' or 'WILLCOM' in Air H" Phone
+
+0.24 Mon Oct 31 16:37:29 JST 2005
+    * Added is_win method in EZweb
+    - Fixed the method parse Vodafone 3GC models
+
+0.23_03 Mon Jun 20 13:09:10 JST 2005
+    - Added A5511T (au)
+
+0.23_02 Mon May 16 12:28:19 JST 2005
+    - Fixed _parse_3gc() and _parse_motorola_3gc() in HTTP/MobileAgent/Vodafone.pm
+      (Thanks to SATOH Fumiyasu)
+
+0.23_01 Thu Mar 10 02:10:42 JST 2005
+    - Developer Release
+    * Added is_type_3gc method in Vodafone
+    * Added AH-K3001V (Air H" Phone)
+    - Added HTML 4.0 & 5.0 support models in html_version 
+    * Fixed problem that make(xml)?docomomap programs couldn't parse
+      current web page exactly.
+
+0.22 Fri Jun 11 14:42:55 JST 2004
+    * Fixed bug model returns '' in EZweb
+
+0.21 Tue Jun  1 01:53:41 JST 2004
+    - Added documentation for status() method in DoCoMo.
+    - Added D506i,F506i,F900i,N900i,P900i,SH900i
+    * Added is_vodafone utility method
+    * Added is_tuka utility method
+    * Added carrier,carrier_longname utility method
+    * Added is_type_c,is_type_p,is_type_w method in Vodafone
+    * Added MobileAgent::Vodafone.pm
+      MobileAgent::JPhone.pm is sub class of MobileAgent::Vodafone.pm
+    - model returns device_id in EZweb
+    - model and device_id return '' in NonMobile
+
+0.20  Sun Oct 26 07:34:53 JST 2003
+    * if the environment variable DOCOMO_MAP exists,
+      the specified XML data will be used
+      for $HTTP::MobileAgent::DoCoMoDisplayMap::DisplayMap.
+
+0.19  Wed Oct 8 14:01:55 JST 2003
+    - Added D252i, SH252i, P252i, D505iS, N505iS, P505iS
+
+0.18  Mon Sep  1 23:43:08 JST 2003
+    - Added SH505i2 (huh?), N2102V
+
+0.17  Wed Aug  6 21:12:01 JST 2003
+    - Added P505i, N2102V (auto-generated)    
+
+0.16  Wed Jul  9 16:33:27 JST 2003
+    - Added F505i & F2102V (auto-generated) 
+
+0.15  Wed Jul  9 01:31:17 JST 2003
+    - Added TB (status) support for FOMA
+
+0.14  Tue Jul  1 21:25:25 JST 2003
+    - Added N505i (auto-generated)
+
+0.13  Mon Jun 30 00:36:38 JST 2003
+    - make DoCoMoDisplayMap case-insensitive
+      to fix P209is gotcha
+      (Thanks to Satoshi Tanimoto)
+
+0.12  Wed, 18 Jun 2003 22:23:54 +0900
+    - Added N2701, SO505i and SH505i (auto-generated)
+    - Added i-mode HTML4.0 FOMA
+
+0.11  Wed May 21 20:54:34 JST 2003
+    * Added is_gps() method in DoCoMo
+    - Reference for PHP port in POD
+    - Added D505i (auto-generated)
+
+0.10  Tue May  6 18:10:43 JST 2003
+    * Added DoCoMo 505i & i-mode HTML 5.0 support
+    - Added F661i (HTML 4.0)
+
+0.09  Wed Apr  2 19:16:20 JST 2003
+    * Added Air H" Phone support (AirHPhone.pm)
+    - Added P2102V, N211iS, P211iS (auto-generated)
+    - Added FOMA HTML 4.0 support in html_version 
+
+0.08  Thu Feb 20 18:28:44 JST 2003
+    - Added is_non_mobile() method
+
+0.07  Mon Jan 27 12:04:33 JST 2003
+    - Added N504iS, D251iS, P251iS, F2051, N2051, F504iS (auto-generated)
+
+0.06  Wed Dec  4 19:49:16 JST 2002
+    * Added is_wap1, is_wap2 utility method
+
+0.05  Mon Nov 18 19:39:40 JST 2002
+    * Fixed bug in pattern match value check (caused bug in mod_perl environment)
+
+0.04  Thu Nov 14 00:47:47 JST 2002
+    * Restored is_docomo, is_j_phone, is_ezweb API for handiness
+    - Added F212i, SO212i, P504iS, SH251iS in DoCoMoDisplayMap (auto-generated)
+
+0.03  Tue Oct 29 23:53:01 JST 2002
+    * Added HTTP::MobileAgent::Display to support various display information
+
+0.02  Mon Sep 23 09:00:40 JST 2002
+    * Removed is_* API. Use $agent->name for dispatch
+    - warn_no_match() doesn't bless to NonMobile 
+
+0.01  Fri Sep 20 23:01:05 2002
+    - original version
