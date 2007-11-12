@@ -1,41 +1,42 @@
 #!/usr/bin/perl -w
 use strict;
-use Jcode;
+use warnings;
+use utf8;
 use LWP::Simple;
-use Data::Dumper;
-use HTTP::MobileAgent;
-require XML::Simple;
+use XML::Simple ();
+use Encode;
 
-my $URL = 'http://www.nttdocomo.co.jp/service/imode/make/content/spec/screen_area/index.html';
+my $URL =
+'http://www.nttdocomo.co.jp/service/imode/make/content/spec/screen_area/index.html';
 
 do_task(@ARGV);
 
 sub do_task {
-    my $html = Jcode->new(get($URL))->tr('£°-£¹', '0-9')->euc;
+    my $html = decode( 'cp932',  get($URL) );
     $html =~ s/(?:\r?\n)+/\n/g;
     my $re = regexp();
     my %map;
-    while ($html =~ /$re/igs) {
-	my($model, $width, $height, $color, $depth) = ($1, $2, $3, $4, $5);
-	push @{$map{terminal}}, {
-            model => uc($model),
-	    width => $width,
-	    height => $height,
-	    color => $color eq '¥«¥é¡¼',
-	    depth => $depth,
-	};
+    while ( $html =~ /$re/igs ) {
+        my ( $model, $width, $height, $color, $depth ) = ( $1, $2, $3, $4, $5 );
+        push @{ $map{terminal} },
+          {
+            model  => uc($model),
+            width  => $width,
+            height => $height,
+            color  => $color eq 'ã‚«ãƒ©ãƒ¼',
+            depth  => $depth,
+          };
     }
-    output_code(\%map);
+    output_code( \%map );
 }
 
 sub output_code {
-    my($map) = @_;
+    my ($map) = @_;
     my $xml = XML::Simple->new;
     printf <<'TEMPLATE', $xml->XMLout($map);
 <?xml version="1.0" ?>
 %s
 TEMPLATE
-    ;
 }
 
 sub regexp {
@@ -43,9 +44,8 @@ sub regexp {
 <td><span class="txt">([A-Z]+\d+\w*\+?).*?</span></td>
 <td><span class="txt">.*?(?:</span></td>)?
 <td><span class="txt">.*?(?:</span></td>)?
-<td><span class="txt">.*?(\d+)¡ß(\d+).*?</span></td>
+<td><span class="txt">.*?(\d+)Ã—(\d+).*?</span></td>
 <td>.*?</td>
-<td><span class="txt">(Çò¹õ|¥«¥é¡¼)(?:.*?)(\d+)(?:¿§|³¬Ä´)</span></td>
+<td><span class="txt">(ç™½é»’|ã‚«ãƒ©ãƒ¼)(?:.*?)(\d+)(?:è‰²|éšŽèª¿)</span></td>
 RE
-    ;
 }
