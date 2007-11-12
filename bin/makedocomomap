@@ -83,8 +83,8 @@ TEMPLATE
 sub regexp {
     return <<'RE';
 <td><span class="txt">([A-Z]+\d+\w*\+?).*?</span></td>
-<td><span class="txt">.*?(?:</FONT></TD>)?</span></td>
-<td><span class="txt">.*?(?:</FONT></TD>)?</span></td>
+<td><span class="txt">.*?(?:</span></td>)?
+<td><span class="txt">.*?(?:</span></td>)?
 <td><span class="txt">.*?(\d+)¡ß(\d+).*?</span></td>
 <td>.*?</td>
 <td><span class="txt">(Çò¹õ|¥«¥é¡¼)(?:.*?)(\d+)(?:¿§|³¬Ä´)</span></td>
