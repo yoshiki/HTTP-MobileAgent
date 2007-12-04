@@ -16,6 +16,7 @@ do_task(@ARGV);
 sub do_task {
     my $html = decode( 'cp932', get($URL) );
     $html =~ s/(?:\r?\n)+/\n/g;
+    $html =~ s/&mu;/myu/g;
     my $re = regexp();
     my %map;
     while ( $html =~ /$re/igs ) {
