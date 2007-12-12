@@ -98,6 +98,12 @@ $DisplayMap ||= {
     'depth' => '4096',
     'height' => '113'
   },
+  'F801I' => {
+    'width' => '240',
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '352'
+  },
   'F704I' => {
     'width' => '230',
     'color' => 1,
