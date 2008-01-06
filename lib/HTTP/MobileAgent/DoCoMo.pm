@@ -17,7 +17,7 @@ use HTTP::MobileAgent::DoCoMoDisplayMap qw($DisplayMap);
 use vars qw($DefaultCacheSize $HTMLVerMap $GPSModels);
 $DefaultCacheSize = 5;
 
-# http://www.nttdocomo.co.jp/p_s/imode/spec/useragent.html
+# http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/
 $HTMLVerMap = [
     # regex => version
     qr/[DFNP]501i/ => '1.0',
