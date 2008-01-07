@@ -1,0 +1,35 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use WWW::MobileCarrierJP::DoCoMo::HTMLVersion;
+use Data::Dumper;
+
+&main;exit;
+
+sub main {
+    print dumpit(make_data());
+}
+
+sub dumpit {
+    my $data = shift;
+
+    my $dumper = Data::Dumper->new([$data]);
+    $dumper->Indent(1)->Terse(1)->Sortkeys(1);
+    '$HTMLVerMap = ' . $dumper->Dump;
+}
+
+sub make_data {
+    my $ret;
+
+    my $dat = WWW::MobileCarrierJP::DoCoMo::HTMLVersion->scrape;
+    for my $ver (@$dat) {
+        my $re = join('|', @{$ver->{models}});
+        push @$ret, qr{^(?:$re)$}i;
+        push @$ret, $ver->{version}
+    }
+
+    push @$ret, qr{^(?:eggy|P751v)$}i; # ah, we support obsolete phones :)
+    push @$ret, '3.2';
+
+    $ret;
+}
