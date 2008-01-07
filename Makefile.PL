@@ -6,6 +6,7 @@ requires 'HTTP::Headers' => 1.43;
 
 build_requires 'Test::More' => 0.32;
 
+use_test_base;
 auto_include;
 WriteAll;
 
