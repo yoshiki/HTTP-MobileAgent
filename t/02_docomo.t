@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 909;
+use Test::More tests => 910;
 
 BEGIN { use_ok 'HTTP::MobileAgent' }
 
@@ -13,13 +13,13 @@ my @Tests = (
     [ "DoCoMo/1.0/D211i/c10", '1.0', '3.0', 'D211i', 10, undef, 'D', '211i', {}, 0 ],
     [ "DoCoMo/1.0/SH251i/c10", '1.0', '3.0', 'SH251i', 10, undef, 'SH', '251i', {}, 0 ],
     [ "DoCoMo/1.0/R692i/c10", '1.0', '3.0', 'R692i', 10, undef, 'R', '692i', {}, 0 ],
-    [ "DoCoMo/2.0 P2101V(c100)", '2.0', '3.0', 'P2101V', 100, 1, 'P', 'FOMA', {}, 1 ],
-    [ "DoCoMo/2.0 N2001(c10)", '2.0', '3.0', 'N2001', 10, 1, 'N', 'FOMA', {}, 1 ],
-    [ "DoCoMo/2.0 N2002(c100)", '2.0', '3.0', 'N2002', 100, 1, 'N', 'FOMA', {}, 1 ],
-    [ "DoCoMo/2.0 D2101V(c100)", '2.0', '3.0', 'D2101V', 100, 1, 'D', 'FOMA', {}, 1 ],
-    [ "DoCoMo/2.0 P2002(c100)", '2.0', '3.0', 'P2002', 100, 1, 'P', 'FOMA', {}, 1 ],
-    [ "DoCoMo/2.0 MST_v_SH2101V(c100)", '2.0', '3.0', 'SH2101V', 100, 1, 'SH', 'FOMA', {}, 1 ],
-    [ "DoCoMo/2.0 T2101V(c100)", '2.0', '3.0', 'T2101V', 100, 1, 'T', 'FOMA', {}, 1 ],
+    [ "DoCoMo/2.0 P2101V(c100)", '2.0', '3.0', 'P2101V', 100, 1, 'P', 'FOMA', {}, 0 ],
+    [ "DoCoMo/2.0 N2001(c10)", '2.0', '3.0', 'N2001', 10, 1, 'N', 'FOMA', {}, 0 ],
+    [ "DoCoMo/2.0 N2002(c100)", '2.0', '3.0', 'N2002', 100, 1, 'N', 'FOMA', {}, 0 ],
+    [ "DoCoMo/2.0 D2101V(c100)", '2.0', '3.0', 'D2101V', 100, 1, 'D', 'FOMA', {}, 0 ],
+    [ "DoCoMo/2.0 P2002(c100)", '2.0', '3.0', 'P2002', 100, 1, 'P', 'FOMA', {}, 0 ],
+    [ "DoCoMo/2.0 MST_v_SH2101V(c100)", '2.0', '3.0', 'SH2101V', 100, 1, 'SH', 'FOMA', {}, 0 ],
+    [ "DoCoMo/2.0 T2101V(c100)", '2.0', '3.0', 'T2101V', 100, 1, 'T', 'FOMA', {}, 0 ],
     [ "DoCoMo/1.0/D504i/c10", '1.0', '4.0', 'D504i', 10, undef, 'D', '504i', {}, 0 ],
     [ "DoCoMo/1.0/D504i/c30/TD", '1.0', '4.0', 'D504i', 30, undef, 'D', '504i', { status => 'TD' }, 0 ],
     [ "DoCoMo/1.0/D504i/c10/TJ", '1.0', '4.0', 'D504i', 10, undef, 'D', '504i', { status => 'TJ' }, 0 ],
@@ -29,7 +29,7 @@ my @Tests = (
     [ "DoCoMo/1.0/F671iS/c10/TB", '1.0', '4.0', 'F671iS', 10, undef, 'F', '671i', { status => 'TB' }, 0 ],
     [ "DoCoMo/1.0/P503i/c10/serNMABH200331", '1.0', '3.0', 'P503i', 10, undef, 'P', '503i', { serial_number => 'NMABH200331' }, 0 ],
     [ "DoCoMo/2.0 N2001(c10;ser0123456789abcde;icc01234567890123456789)",
-      '2.0', '3.0', 'N2001', 10, 1, 'N', 'FOMA', { serial_number => '0123456789abcde', card_id => '01234567890123456789' }, 1 ],
+      '2.0', '3.0', 'N2001', 10, 1, 'N', 'FOMA', { serial_number => '0123456789abcde', card_id => '01234567890123456789' }, 0 ],
     [ "DoCoMo/1.0/eggy/c300/s32/kPHS-K", '1.0', '3.2', 'eggy', 300, undef, undef, undef, { bandwidth => 32 }, 0 ],
     [ "DoCoMo/1.0/P751v/c100/s64/kPHS-K", '1.0', '3.2', 'P751v', 100, undef, 'P', undef, { bandwidth => 64 }, 0 ],
     [ "DoCoMo/1.0/P209is (Google CHTML Proxy/1.0)", '1.0', '2.0', 'P209is', 5, undef, 'P', '209i', { comment => 'Google CHTML Proxy/1.0' }, 0 ],
@@ -62,6 +62,13 @@ for (@Tests) {
     is $agent->carrier, 'I' , "carrier is I";
     is $agent->carrier_longname, 'DoCoMo' ,  "carrier longname is DoCoMo";
 
+}
+
+{
+    # SH905i is XHTML Compliant.
+    local $ENV{HTTP_USER_AGENT} = 'DoCoMo/2.0 SH905i(c100;TB;W24H12)';
+    my $agent = HTTP::MobileAgent->new;
+    is $agent->xhtml_compliant, 1;
 }
 
 

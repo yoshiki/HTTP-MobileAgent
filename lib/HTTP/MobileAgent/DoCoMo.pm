@@ -54,7 +54,11 @@ sub parse {
 	# DoCoMo/1.0/R692i/c10
 	$self->_parse_main($main);
     }
-    $self->{xhtml_compliant} = $self->version eq '2.0' ? 1 : 0;
+
+    $self->{xhtml_compliant} =
+      ( $self->is_foma && !( $self->html_version && $self->html_version == 3.0 ) )
+      ? 1
+      : 0;
 }
 
 sub _parse_main {
