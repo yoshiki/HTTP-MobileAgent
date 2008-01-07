@@ -24,6 +24,7 @@ sub carrier { 'N' }
 
 sub carrier_longname { 'NonMobile' }
 
+sub xhtml_compliant { 1 }
 
 1;
 __END__

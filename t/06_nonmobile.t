@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 1476;
+use Test::More tests => 164 * 10;
 use HTTP::MobileAgent;
 
 while (<DATA>) {
@@ -15,6 +15,7 @@ while (<DATA>) {
     ok $agent->device_id eq '';
     ok $agent->carrier eq 'N';
     ok $agent->carrier_longname eq 'NonMobile';
+    ok $agent->xhtml_compliant;
 }
 
 __END__
