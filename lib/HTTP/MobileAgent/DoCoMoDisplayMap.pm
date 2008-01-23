@@ -176,6 +176,12 @@ $DisplayMap ||= {
     'depth' => '262144',
     'height' => '144'
   },
+  'D705I' => {
+    'width' => '240',
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320'
+  },
   'P851I' => {
     'width' => '240',
     'color' => 1,
@@ -229,6 +235,12 @@ $DisplayMap ||= {
     'color' => 1,
     'depth' => '65536',
     'height' => '130'
+  },
+  'N705I' => {
+    'width' => '240',
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320'
   },
   'L602I' => {
     'width' => '170',
@@ -866,6 +878,12 @@ $DisplayMap ||= {
     'depth' => '65536',
     'height' => '189'
   },
+  'SH905ITV' => {
+    'width' => '240',
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '320'
+  },
   'SO504I' => {
     'width' => '120',
     'color' => 1,
@@ -1237,6 +1255,18 @@ $DisplayMap ||= {
     'color' => 1,
     'depth' => '256',
     'height' => '90'
+  },
+  'P705I' => {
+    'width' => '240',
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '350'
+  },
+  'D705IMYU' => {
+    'width' => '240',
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240'
   },
   'D702IBCL' => {
     'width' => '230',
