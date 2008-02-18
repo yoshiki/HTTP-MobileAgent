@@ -32,1511 +32,1553 @@ BEGIN {
 }
 
 $DisplayMap ||= {
-  'P2101V' => {
-    'width' => '163',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '182'
-  },
-  'P703IMYU' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'R211I' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '98'
-  },
-  'N905IMYU' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'SH702IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'F2102V' => {
-    'width' => '176',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '182'
-  },
-  'D903ITV' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'P209IS' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '87'
-  },
-  'SO903ITV' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '368'
-  },
-  'P504I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144'
-  },
-  'F211I' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '113'
-  },
-  'F801I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '352'
-  },
-  'F704I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'SO703I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '368'
-  },
-  'N251IS' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '140'
-  },
-  'SH251IS' => {
-    'width' => '176',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '187'
-  },
-  'SH505I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252'
-  },
-  'ER209I' => {
-    'width' => '120',
-    'color' => '',
-    'depth' => '2',
-    'height' => '72'
-  },
-  'SA800I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '252'
-  },
-  'F881IES' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '256'
-  },
-  'P821I' => {
-    'width' => '118',
-    'color' => '',
-    'depth' => '4',
-    'height' => '128'
-  },
-  'D851IWM' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'P900IV' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '266'
-  },
-  'D251I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '144'
-  },
-  'D705I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'P851I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'F671IS' => {
-    'width' => '160',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '120'
-  },
-  'N2002' => {
-    'width' => '118',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '128'
-  },
-  'N211I' => {
-    'width' => '118',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '128'
-  },
-  'N905I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'N704IMYU' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'D505I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'P505IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '266'
-  },
-  'P211IS' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '130'
-  },
-  'N705I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'L602I' => {
-    'width' => '170',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '189'
-  },
-  'P209I' => {
-    'width' => '96',
-    'color' => '',
-    'depth' => '4',
-    'height' => '87'
-  },
-  'D502I' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '90'
-  },
-  'D252I' => {
-    'width' => '176',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '198'
-  },
-  'D800IDS' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'SO210I' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '113'
-  },
-  'N901IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'NM502I' => {
-    'width' => '111',
-    'color' => '',
-    'depth' => '2',
-    'height' => '106'
-  },
-  'P213I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144'
-  },
-  'F901IC' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'D703I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'D702IF' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'SH902I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'P503I' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '130'
-  },
-  'P211I' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '130'
-  },
-  'N503IS' => {
-    'width' => '118',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '128'
-  },
-  'N506ISII' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '295'
-  },
-  'N211IS' => {
-    'width' => '118',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '128'
-  },
-  'N900IG' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '269'
-  },
-  'SO213IWR' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '112'
-  },
-  'D504I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '144'
-  },
-  'F883IES' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '256'
-  },
-  'SH506IC' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252'
-  },
-  'P506ICII' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '266'
-  },
-  'F702ID' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'N905IBIZ' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'SH905I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '16777216',
-    'height' => '320'
-  },
-  'SH904I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'P704IMYU' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'P702ID' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'P703I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'SA700IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '252'
-  },
-  'SO506IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '256'
-  },
-  'KO209I' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '96'
-  },
-  'F506I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '268'
-  },
-  'P905I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '350'
-  },
-  'P252IS' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144'
-  },
-  'F905I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '16777216',
-    'height' => '352'
-  },
-  'L601I' => {
-    'width' => '170',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '189'
-  },
-  'SO502IWM' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '113'
-  },
-  'N503I' => {
-    'width' => '118',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '128'
-  },
-  'KO210I' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '96'
-  },
-  'F700IS' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'N700I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'N251I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '140'
-  },
-  'D506I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'SO213I' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '112'
-  },
-  'D902I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'M702IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '267'
-  },
-  'D701IWM' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '240'
-  },
-  'F672I' => {
-    'width' => '160',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '120'
-  },
-  'D503I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '126'
-  },
-  'SH902IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'F502IT' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '91'
-  },
-  'D901I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'N2701' => {
-    'width' => '176',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '198'
-  },
-  'P502I' => {
-    'width' => '96',
-    'color' => '',
-    'depth' => '4',
-    'height' => '117'
-  },
-  'N502I' => {
-    'width' => '118',
-    'color' => '',
-    'depth' => '4',
-    'height' => '128'
-  },
-  'SO211I' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '112'
-  },
-  'N505IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'SO702I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '256'
-  },
-  'D505IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'P701ID' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'F2051' => {
-    'width' => '176',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '182'
-  },
-  'P251IS' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144'
-  },
-  'P505I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '266'
-  },
-  'R209I' => {
-    'width' => '96',
-    'color' => '',
-    'depth' => '4',
-    'height' => '72'
-  },
-  'T2101V' => {
-    'width' => '176',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '144'
-  },
-  'F903IBSC' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'SO506IC' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '256'
-  },
-  'N252I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '140'
-  },
-  'N904I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '352'
-  },
-  'N703IMYU' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'N600I' => {
-    'width' => '176',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '180'
-  },
-  'N501I' => {
-    'width' => '118',
-    'color' => '',
-    'depth' => '2',
-    'height' => '128'
-  },
-  'N902I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'D903I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'F703I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'F900I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'P252I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144'
-  },
-  'P902IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'F901IS' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'D253IWM' => {
-    'width' => '220',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '144'
-  },
-  'F661I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '136'
-  },
-  'D501I' => {
-    'width' => '96',
-    'color' => '',
-    'depth' => '2',
-    'height' => '72'
-  },
-  'P704I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'L704I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '280'
-  },
-  'SO902I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '256'
-  },
-  'F505IGPS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '268'
-  },
-  'NM850IG' => {
-    'width' => '176',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144'
-  },
-  'N900IL' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '269'
-  },
-  'SH704I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'N702IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'P700I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'N701IECO' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'F705I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '352'
-  },
-  'F904I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '352'
-  },
-  'SO212I' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '112'
-  },
-  'N209I' => {
-    'width' => '108',
-    'color' => '',
-    'depth' => '4',
-    'height' => '82'
-  },
-  'D503IS' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '126'
-  },
-  'SH505IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252'
-  },
-  'P210I' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '91'
-  },
-  'N506IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '295'
-  },
-  'F883I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '256'
-  },
-  'F902IS' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'L600I' => {
-    'width' => '170',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '189'
-  },
-  'SH905ITV' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '16777216',
-    'height' => '320'
-  },
-  'SO504I' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '112'
-  },
-  'P253IS' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144'
-  },
-  'SO213IS' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '112'
-  },
-  'N504IS' => {
-    'width' => '160',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '180'
-  },
-  'D251IS' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '144'
-  },
-  'N900I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '269'
-  },
-  'D905I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '352'
-  },
-  'P503IS' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '130'
-  },
-  'SH252I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252'
-  },
-  'P702I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'D701I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '240'
-  },
-  'D704I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'N210I' => {
-    'width' => '118',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '113'
-  },
-  'P903I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'N502IT' => {
-    'width' => '118',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '128'
-  },
-  'N703ID' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'P900I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '266'
-  },
-  'F880IES' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '256'
-  },
-  'M702IG' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '267'
-  },
-  'R691I' => {
-    'width' => '96',
-    'color' => '',
-    'depth' => '4',
-    'height' => '72'
-  },
-  'P901I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'F900IT' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'N601I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'D702I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'P902I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'SH821I' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '78'
-  },
-  'F209I' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '91'
-  },
-  'D901IS' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'N505I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'SO903I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '368'
-  },
-  'N506I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '295'
-  },
-  'P904I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '350'
-  },
-  'SH703I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'SA702I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '252'
-  },
-  'F210I' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '113'
-  },
-  'SH900I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252'
-  },
-  'R692I' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '98'
-  },
-  'F903I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'SO502I' => {
-    'width' => '120',
-    'color' => '',
-    'depth' => '4',
-    'height' => '120'
-  },
-  'SO506I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '256'
-  },
-  'F700I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'F503IS' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '130'
-  },
-  'F504I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '136'
-  },
-  'F671I' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '126'
-  },
-  'N902IL' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'N901IC' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'SO505I' => {
-    'width' => '256',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'N2001' => {
-    'width' => '118',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '128'
-  },
-  'SO503I' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '113'
-  },
-  'N702ID' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'F504IS' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '136'
-  },
-  'SH901IC' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252'
-  },
-  'F501I' => {
-    'width' => '112',
-    'color' => '',
-    'depth' => '2',
-    'height' => '84'
-  },
-  'P903IX' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'P901ITV' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'F502I' => {
-    'width' => '96',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '91'
-  },
-  'SO905I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '16777216',
-    'height' => '368'
-  },
-  'SH700IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252'
-  },
-  'F251I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '140'
-  },
-  'P253I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144'
-  },
-  'SH851I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252'
-  },
   'D209I' => {
-    'width' => '96',
     'color' => 1,
     'depth' => '256',
-    'height' => '90'
-  },
-  'P705I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '350'
-  },
-  'D705IMYU' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'D702IBCL' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'SH2101V' => {
-    'width' => '800',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '600'
-  },
-  'D211I' => {
-    'width' => '100',
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '91'
-  },
-  'D253I' => {
-    'width' => '176',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '198'
-  },
-  'N701I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'SH901IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252'
-  },
-  'SO505IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '256'
-  },
-  'N903I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'D902IS' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'P2002' => {
-    'width' => '118',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '128'
-  },
-  'F900IC' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
+    'height' => '90',
+    'width' => '96'
   },
   'D2101V' => {
-    'width' => '120',
     'color' => 1,
     'depth' => '262144',
-    'height' => '130'
-  },
-  'P504IS' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144'
-  },
-  'SH700I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252'
-  },
-  'N900IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '269'
-  },
-  'P651PS' => {
-    'width' => '96',
-    'color' => '',
-    'depth' => '4',
-    'height' => '87'
-  },
-  'F902I' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'SO902IWP+' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '256'
-  },
-  'D904I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'F503I' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '256',
-    'height' => '130'
-  },
-  'P903ITV' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '350'
-  },
-  'SH902ISL' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'SO704I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '368'
-  },
-  'P901IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '270'
-  },
-  'D900I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'SH251I' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '130'
-  },
-  'N2102V' => {
-    'width' => '176',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '198'
-  },
-  'P501I' => {
-    'width' => '96',
-    'color' => '',
-    'depth' => '2',
-    'height' => '120'
-  },
-  'N253I' => {
-    'width' => '160',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '180'
-  },
-  'SO503IS' => {
-    'width' => '120',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '113'
-  },
-  'P2102V' => {
-    'width' => '176',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '198'
-  },
-  'F212I' => {
-    'width' => '132',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '136'
-  },
-  'SH903I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'N902IS' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'SH903ITV' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '320'
-  },
-  'P506IC' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '266'
-  },
-  'SH702ID' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'F505I' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '268'
-  },
-  'F903IX' => {
-    'width' => '230',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240'
-  },
-  'N902IX' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270'
-  },
-  'N821I' => {
-    'width' => '118',
-    'color' => '',
-    'depth' => '4',
-    'height' => '128'
-  },
-  'N2051' => {
-    'width' => '176',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '198'
-  },
-  'F882IES' => {
-    'width' => '240',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '256'
-  },
-  'N504I' => {
-    'width' => '160',
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '180'
+    'height' => '130',
+    'width' => '120'
   },
   'D210I' => {
-    'width' => '96',
     'color' => 1,
     'depth' => '256',
-    'height' => '91'
+    'height' => '91',
+    'width' => '96'
+  },
+  'D211I' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '91',
+    'width' => '100'
+  },
+  'D251I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '144',
+    'width' => '132'
+  },
+  'D251IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '144',
+    'width' => '132'
+  },
+  'D252I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '198',
+    'width' => '176'
+  },
+  'D253I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '198',
+    'width' => '176'
+  },
+  'D253IWM' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '144',
+    'width' => '220'
+  },
+  'D501I' => {
+    'color' => '',
+    'depth' => '2',
+    'height' => '72',
+    'width' => '96'
+  },
+  'D502I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '90',
+    'width' => '96'
+  },
+  'D503I' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '126',
+    'width' => '132'
+  },
+  'D503IS' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '126',
+    'width' => '132'
+  },
+  'D504I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '144',
+    'width' => '132'
+  },
+  'D505I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'D505IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'D506I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'D701I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '240',
+    'width' => '230'
+  },
+  'D701IWM' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '240',
+    'width' => '230'
+  },
+  'D702I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'D702IBCL' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'D702IF' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'D703I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'D704I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'D705I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'D705IMYU' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '240'
+  },
+  'D800IDS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'D851IWM' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '230'
+  },
+  'D900I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'D901I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'D901IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'D902I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '230'
+  },
+  'D902IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '230'
+  },
+  'D903I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '230'
+  },
+  'D903ITV' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '230'
+  },
+  'D904I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'D905I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '352',
+    'width' => '240'
+  },
+  'ER209I' => {
+    'color' => '',
+    'depth' => '2',
+    'height' => '72',
+    'width' => '120'
+  },
+  'F2051' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '182',
+    'width' => '176'
+  },
+  'F209I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '91',
+    'width' => '96'
+  },
+  'F2102V' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '182',
+    'width' => '176'
+  },
+  'F210I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '113',
+    'width' => '96'
+  },
+  'F211I' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '113',
+    'width' => '96'
+  },
+  'F212I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '136',
+    'width' => '132'
+  },
+  'F251I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '140',
+    'width' => '132'
+  },
+  'F501I' => {
+    'color' => '',
+    'depth' => '2',
+    'height' => '84',
+    'width' => '112'
+  },
+  'F502I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '91',
+    'width' => '96'
+  },
+  'F502IT' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '91',
+    'width' => '96'
+  },
+  'F503I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '130',
+    'width' => '120'
+  },
+  'F503IS' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '130',
+    'width' => '120'
+  },
+  'F504I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '136',
+    'width' => '132'
+  },
+  'F504IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '136',
+    'width' => '132'
+  },
+  'F505I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '268',
+    'width' => '240'
+  },
+  'F505IGPS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '268',
+    'width' => '240'
+  },
+  'F506I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '268',
+    'width' => '240'
+  },
+  'F661I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '136',
+    'width' => '132'
+  },
+  'F671I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '126',
+    'width' => '120'
+  },
+  'F671IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '120',
+    'width' => '160'
+  },
+  'F672I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '120',
+    'width' => '160'
+  },
+  'F700I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F700IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F702ID' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F703I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F704I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F705I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '352',
+    'width' => '240'
+  },
+  'F801I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '352',
+    'width' => '240'
+  },
+  'F880IES' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '256',
+    'width' => '240'
+  },
+  'F881IES' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '256',
+    'width' => '240'
+  },
+  'F882IES' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '256',
+    'width' => '240'
+  },
+  'F883I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '256',
+    'width' => '240'
+  },
+  'F883IES' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '256',
+    'width' => '240'
+  },
+  'F900I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F900IC' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F900IT' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F901IC' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F901IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F902I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F902IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F903I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F903IBSC' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F903IX' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '230'
+  },
+  'F904I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '352',
+    'width' => '240'
+  },
+  'F905I' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '352',
+    'width' => '240'
+  },
+  'F905IBIZ' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '352',
+    'width' => '240'
+  },
+  'KO209I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '96',
+    'width' => '96'
+  },
+  'KO210I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '96',
+    'width' => '96'
+  },
+  'L600I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '189',
+    'width' => '170'
+  },
+  'L601I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '189',
+    'width' => '170'
+  },
+  'L602I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '189',
+    'width' => '170'
+  },
+  'L704I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '280',
+    'width' => '240'
+  },
+  'L705I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '280',
+    'width' => '240'
+  },
+  'M702IG' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '267',
+    'width' => '240'
+  },
+  'M702IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '267',
+    'width' => '240'
+  },
+  'N2001' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '128',
+    'width' => '118'
+  },
+  'N2002' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '128',
+    'width' => '118'
+  },
+  'N2051' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '198',
+    'width' => '176'
+  },
+  'N209I' => {
+    'color' => '',
+    'depth' => '4',
+    'height' => '82',
+    'width' => '108'
+  },
+  'N2102V' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '198',
+    'width' => '176'
+  },
+  'N210I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '113',
+    'width' => '118'
+  },
+  'N211I' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '128',
+    'width' => '118'
+  },
+  'N211IS' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '128',
+    'width' => '118'
+  },
+  'N251I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '140',
+    'width' => '132'
+  },
+  'N251IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '140',
+    'width' => '132'
+  },
+  'N252I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '140',
+    'width' => '132'
+  },
+  'N253I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '180',
+    'width' => '160'
+  },
+  'N2701' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '198',
+    'width' => '176'
+  },
+  'N501I' => {
+    'color' => '',
+    'depth' => '2',
+    'height' => '128',
+    'width' => '118'
+  },
+  'N502I' => {
+    'color' => '',
+    'depth' => '4',
+    'height' => '128',
+    'width' => '118'
+  },
+  'N502IT' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '128',
+    'width' => '118'
+  },
+  'N503I' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '128',
+    'width' => '118'
+  },
+  'N503IS' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '128',
+    'width' => '118'
+  },
+  'N504I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '180',
+    'width' => '160'
+  },
+  'N504IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '180',
+    'width' => '160'
+  },
+  'N505I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N505IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N506I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '295',
+    'width' => '240'
+  },
+  'N506IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '295',
+    'width' => '240'
+  },
+  'N506ISII' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '295',
+    'width' => '240'
+  },
+  'N600I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '180',
+    'width' => '176'
+  },
+  'N601I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N700I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N701I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N701IECO' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N702ID' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N702IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N703ID' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N703IMYU' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N704IMYU' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N705I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'N705IMYU' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'N821I' => {
+    'color' => '',
+    'depth' => '4',
+    'height' => '128',
+    'width' => '118'
+  },
+  'N900I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '269',
+    'width' => '240'
+  },
+  'N900IG' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '269',
+    'width' => '240'
+  },
+  'N900IL' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '269',
+    'width' => '240'
+  },
+  'N900IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '269',
+    'width' => '240'
+  },
+  'N901IC' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N901IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N902I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N902IL' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N902IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N902IX' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N903I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'N904I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '352',
+    'width' => '240'
+  },
+  'N905I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'N905IBIZ' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'N905IMYU' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'NM502I' => {
+    'color' => '',
+    'depth' => '2',
+    'height' => '106',
+    'width' => '111'
+  },
+  'NM850IG' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '144',
+    'width' => '176'
+  },
+  'P2002' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '128',
+    'width' => '118'
+  },
+  'P209I' => {
+    'color' => '',
+    'depth' => '4',
+    'height' => '87',
+    'width' => '96'
+  },
+  'P209IS' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '87',
+    'width' => '96'
+  },
+  'P2101V' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '182',
+    'width' => '163'
+  },
+  'P2102V' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '198',
+    'width' => '176'
+  },
+  'P210I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '91',
+    'width' => '96'
+  },
+  'P211I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '130',
+    'width' => '120'
+  },
+  'P211IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '130',
+    'width' => '120'
+  },
+  'P213I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '144',
+    'width' => '132'
+  },
+  'P251IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '144',
+    'width' => '132'
+  },
+  'P252I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '144',
+    'width' => '132'
+  },
+  'P252IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '144',
+    'width' => '132'
+  },
+  'P253I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '144',
+    'width' => '132'
+  },
+  'P253IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '144',
+    'width' => '132'
+  },
+  'P501I' => {
+    'color' => '',
+    'depth' => '2',
+    'height' => '120',
+    'width' => '96'
+  },
+  'P502I' => {
+    'color' => '',
+    'depth' => '4',
+    'height' => '117',
+    'width' => '96'
+  },
+  'P503I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '130',
+    'width' => '120'
+  },
+  'P503IS' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '130',
+    'width' => '120'
+  },
+  'P504I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '144',
+    'width' => '132'
+  },
+  'P504IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '144',
+    'width' => '132'
+  },
+  'P505I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '266',
+    'width' => '240'
+  },
+  'P505IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '266',
+    'width' => '240'
+  },
+  'P506IC' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '266',
+    'width' => '240'
+  },
+  'P506ICII' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '266',
+    'width' => '240'
+  },
+  'P651PS' => {
+    'color' => '',
+    'depth' => '4',
+    'height' => '87',
+    'width' => '96'
+  },
+  'P700I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P701ID' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P702I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P702ID' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P703I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P703IMYU' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P704I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P704IMYU' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P705I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '350',
+    'width' => '240'
+  },
+  'P705IMYU' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '350',
+    'width' => '240'
+  },
+  'P821I' => {
+    'color' => '',
+    'depth' => '4',
+    'height' => '128',
+    'width' => '118'
+  },
+  'P851I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P900I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '266',
+    'width' => '240'
+  },
+  'P900IV' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '266',
+    'width' => '240'
+  },
+  'P901I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P901IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P901ITV' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P902I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P902IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P903I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P903ITV' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '350',
+    'width' => '240'
+  },
+  'P903IX' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '270',
+    'width' => '240'
+  },
+  'P904I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '350',
+    'width' => '240'
+  },
+  'P905I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '350',
+    'width' => '240'
+  },
+  'R209I' => {
+    'color' => '',
+    'depth' => '4',
+    'height' => '72',
+    'width' => '96'
+  },
+  'R211I' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '98',
+    'width' => '96'
+  },
+  'R691I' => {
+    'color' => '',
+    'depth' => '4',
+    'height' => '72',
+    'width' => '96'
+  },
+  'R692I' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '98',
+    'width' => '96'
+  },
+  'SA700IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SA702I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SA800I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SH2101V' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '600',
+    'width' => '800'
+  },
+  'SH251I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '130',
+    'width' => '120'
+  },
+  'SH251IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '187',
+    'width' => '176'
+  },
+  'SH252I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SH505I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SH505IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SH506IC' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SH700I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SH700IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SH702ID' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '240'
+  },
+  'SH702IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '240'
+  },
+  'SH703I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '240'
+  },
+  'SH704I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'SH705I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'SH821I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '78',
+    'width' => '96'
+  },
+  'SH851I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SH900I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SH901IC' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SH901IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '252',
+    'width' => '240'
+  },
+  'SH902I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '240'
+  },
+  'SH902IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '240'
+  },
+  'SH902ISL' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '240'
+  },
+  'SH903I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'SH903ITV' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'SH904I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'SH905I' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '320',
+    'width' => '240'
+  },
+  'SH905ITV' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '320',
+    'width' => '240'
+  },
+  'SO210I' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '113',
+    'width' => '120'
+  },
+  'SO211I' => {
+    'color' => 1,
+    'depth' => '4096',
+    'height' => '112',
+    'width' => '120'
+  },
+  'SO212I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '112',
+    'width' => '120'
+  },
+  'SO213I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '112',
+    'width' => '120'
+  },
+  'SO213IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '112',
+    'width' => '120'
+  },
+  'SO213IWR' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '112',
+    'width' => '120'
+  },
+  'SO502I' => {
+    'color' => '',
+    'depth' => '4',
+    'height' => '120',
+    'width' => '120'
+  },
+  'SO502IWM' => {
+    'color' => 1,
+    'depth' => '256',
+    'height' => '113',
+    'width' => '120'
+  },
+  'SO503I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '113',
+    'width' => '120'
+  },
+  'SO503IS' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '113',
+    'width' => '120'
+  },
+  'SO504I' => {
+    'color' => 1,
+    'depth' => '65536',
+    'height' => '112',
+    'width' => '120'
+  },
+  'SO505I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '240',
+    'width' => '256'
+  },
+  'SO505IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '256',
+    'width' => '240'
+  },
+  'SO506I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '256',
+    'width' => '240'
+  },
+  'SO506IC' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '256',
+    'width' => '240'
+  },
+  'SO506IS' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '256',
+    'width' => '240'
+  },
+  'SO702I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '256',
+    'width' => '240'
+  },
+  'SO703I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '368',
+    'width' => '240'
+  },
+  'SO704I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '368',
+    'width' => '240'
+  },
+  'SO705I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'SO902I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '256',
+    'width' => '240'
+  },
+  'SO902IWP+' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '256',
+    'width' => '240'
+  },
+  'SO903I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '368',
+    'width' => '240'
+  },
+  'SO903ITV' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '368',
+    'width' => '240'
+  },
+  'SO905I' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '368',
+    'width' => '240'
+  },
+  'SO905ICS' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '368',
+    'width' => '240'
+  },
+  'T2101V' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '144',
+    'width' => '176'
   }
 }
 ;
