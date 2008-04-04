@@ -578,6 +578,12 @@ $DisplayMap ||= {
     'height' => '280',
     'width' => '240'
   },
+  'L705IX' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '280',
+    'width' => '240'
+  },
   'M702IG' => {
     'color' => 1,
     'depth' => '262144',
@@ -914,6 +920,12 @@ $DisplayMap ||= {
     'height' => '106',
     'width' => '111'
   },
+  'NM705I' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '235',
+    'width' => '231'
+  },
   'NM850IG' => {
     'color' => 1,
     'depth' => '65536',
@@ -1124,6 +1136,12 @@ $DisplayMap ||= {
     'height' => '350',
     'width' => '240'
   },
+  'P705ICL' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '350',
+    'width' => '240'
+  },
   'P705IMYU' => {
     'color' => 1,
     'depth' => '262144',
@@ -1209,6 +1227,12 @@ $DisplayMap ||= {
     'width' => '240'
   },
   'P905I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '350',
+    'width' => '240'
+  },
+  'P905ITV' => {
     'color' => 1,
     'depth' => '262144',
     'height' => '350',
@@ -1335,6 +1359,12 @@ $DisplayMap ||= {
     'width' => '240'
   },
   'SH705I' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '320',
+    'width' => '240'
+  },
+  'SH705III' => {
     'color' => 1,
     'depth' => '262144',
     'height' => '320',
