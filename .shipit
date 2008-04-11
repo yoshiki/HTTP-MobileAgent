@@ -1,3 +1,4 @@
 steps = CommitMessageWrap, FindVersion, ChangeVersion, CheckChangeLog, DistTest, Commit, Tag, MakeDist, UploadCPAN
 svn.tagpattern = http://svn.coderepos.org/share/lang/perl/HTTP-MobileAgent/tags/release-%v
 commit_message.format = lang/perl/HTTP-MobileAgent: %msg
+CheckChangeLog.files = Changes
