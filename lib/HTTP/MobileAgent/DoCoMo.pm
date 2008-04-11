@@ -152,6 +152,11 @@ sub is_gps {
     return exists $GPSModels->{$self->model};
 }
 
+sub user_id {
+    my $self = shift;
+    return $self->get_header( 'x-dcmguid' );
+}
+
 1;
 __END__
 

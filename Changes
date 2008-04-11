@@ -1,5 +1,10 @@
 Revision history for Perl extension HTTP::MobileAgent
 
+0.27 Fri Apr 11 13:34:23 2008
+    * Supported user_id to get guid in DoCoMo
+    * Using WWW::MobileCarrierJP when get terminal display information
+      (Thanks to Tokuhiro MATSUNO)
+
 0.26_01 Thu Aug  9 17:08:05 2007
     * Supported funny mobile search crawler.
       eg. J-Phone/5.0/J-SH03

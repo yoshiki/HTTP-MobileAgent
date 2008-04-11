@@ -2,7 +2,7 @@ package HTTP::MobileAgent;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = '0.26_1';
+$VERSION = '0.27';
 
 use HTTP::MobileAgent::Request;
 
@@ -197,6 +197,12 @@ returns if the agent is DoCoMo, Vodafone(J-Phone) or EZweb.
 
 returns HTTP::MobileAgent::Display object. See
 L<HTTP::MobileAgent::Display> for details.
+
+=item user_id
+
+  my $user_id = $agent->user_id;
+
+return X-DCMGUID, X-UP-SUBNO or X-JPHONE-UID.
 
 =back
 

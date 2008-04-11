@@ -29,6 +29,9 @@ sub _make_display {
     # XXX
 }
 
+sub user_id {
+    # XXX
+}
 
 1;
 __END__

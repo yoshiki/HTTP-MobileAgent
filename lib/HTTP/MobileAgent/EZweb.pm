@@ -75,6 +75,11 @@ sub _make_display {
     );
 }
 
+sub user_id {
+    my $self = shift;
+    return $self->get_header( 'x-up-subno' );
+}
+
 1;
 __END__
 
