@@ -1,7 +1,7 @@
 use strict;
 
 use strict;
-use Test::More tests => 18;
+use Test::More tests => 20;
 
 BEGIN { use_ok 'HTTP::MobileAgent' }
 
@@ -38,3 +38,5 @@ Mozilla/3.0(DDIPOCKET;JRC/AH-J3001V,AH-J3002V/1.0/0100/c50)CNF/2.0
 Mozilla/3.0(DDIPOCKET;KYOCERA/AH-K3001V/1.4.1.67.000000/0.1/C100) Opera 7.0
 Mozilla/3.0(WILLCOM;KYOCERA/WX300K/1;1.0.2.8.000000/0.1/C100) Opera/7.0
 Mozilla/3.0(WILLCOM;SANYO/WX310SA/2;1/1/C128) NetFront/3.3
+Mozilla/3.0(WILLCOM;KES/WS009KEplus/2;0001;1/1/C128) NetFront/3.3
+Mozilla/3.0(WILLCOM;KES/WS009KE/2;3/1/C128) NetFront/3.3
