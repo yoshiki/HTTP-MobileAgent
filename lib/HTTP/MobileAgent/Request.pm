@@ -9,7 +9,7 @@ sub new {
     elsif (UNIVERSAL::isa($stuff, 'Apache')) {
 	bless { r => $stuff }, 'HTTP::MobileAgent::Request::Apache';
     }
-    elsif (UNIVERSAL::isa($stuff, 'HTTP::Headers')) {
+    elsif (UNIVERSAL::isa($stuff, 'HTTP::Headers') || UNIVERSAL::isa($stuff, 'HTTP::Headers::Fast')) {
 	bless { r => $stuff }, 'HTTP::MobileAgent::Request::HTTPHeaders';
     }
     else {

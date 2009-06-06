@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 9;
+use Test::More tests => 11;
 
 BEGIN { use_ok 'HTTP::MobileAgent' }
 
@@ -25,6 +25,17 @@ SKIP: {
     skip "no HTTP::Headers", 2 if $@;
 
     my $header = HTTP::Headers->new;
+    $header->header('User-Agent' => $ua);
+    my $agent = HTTP::MobileAgent->new($header);
+    isa_ok $agent, 'HTTP::MobileAgent';
+    is $agent->user_agent, $ua;
+}
+
+SKIP: {
+    eval { require HTTP::Headers::Fast; };
+    skip "no HTTP::Headers::Fast", 2 if $@;
+
+    my $header = HTTP::Headers::Fast->new;
     $header->header('User-Agent' => $ua);
     my $agent = HTTP::MobileAgent->new($header);
     isa_ok $agent, 'HTTP::MobileAgent';
