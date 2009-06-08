@@ -1,5 +1,6 @@
 package HTTP::MobileAgent::Request;
 use strict;
+use Scalar::Util ();
 
 sub new {
     my($class, $stuff) = @_;
@@ -9,7 +10,7 @@ sub new {
     elsif (UNIVERSAL::isa($stuff, 'Apache')) {
 	bless { r => $stuff }, 'HTTP::MobileAgent::Request::Apache';
     }
-    elsif (UNIVERSAL::isa($stuff, 'HTTP::Headers') || UNIVERSAL::isa($stuff, 'HTTP::Headers::Fast')) {
+    elsif (Scalar::Util::blessed($stuff) && $stuff->isa('HTTP::Headers')) {
 	bless { r => $stuff }, 'HTTP::MobileAgent::Request::HTTPHeaders';
     }
     else {

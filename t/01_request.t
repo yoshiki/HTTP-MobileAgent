@@ -33,7 +33,7 @@ SKIP: {
 
 SKIP: {
     eval { require HTTP::Headers::Fast; };
-    skip "no HTTP::Headers::Fast", 2 if $@;
+    skip "no HTTP::Headers::Fast", 2 if $@ || $HTTP::Headers::Fast::VERSION < 0.10; # 0.11 or later supports ->isa
 
     my $header = HTTP::Headers::Fast->new;
     $header->header('User-Agent' => $ua);
