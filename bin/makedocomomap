@@ -2,11 +2,13 @@
 use strict;
 use utf8;
 use FindBin;
+use lib "$FindBin::Bin/../lib";
 use Data::Dumper;
 use HTTP::MobileAgent;
 use Encode;
 use File::Spec;
 use WWW::MobileCarrierJP::DoCoMo::Display;
+use UNIVERSAL::require;
 
 do_task(@ARGV);
 
@@ -14,12 +16,33 @@ sub do_task {
     my $dat = WWW::MobileCarrierJP::DoCoMo::Display->scrape;
     my %map;
     for my $phone (@$dat) {
+        $phone->{model} =~ s/-//; # サイト上では N-04A と表記されているが、UA にふくまれているのは N04A なので。
         $map{ uc $phone->{model} } = +{
             width  => $phone->{width},
             height => $phone->{height},
             color  => $phone->{is_color},
             depth  => $phone->{depth},
         };
+    }
+    my %diff;
+    {
+        HTTP::MobileAgent::DoCoMoDisplayMap->require or die $!;
+        my %oldmap = %{ $HTTP::MobileAgent::DoCoMoDisplayMap::DisplayMap };
+        for my $model ( keys %map ) {
+            if ( $oldmap{ $model } ) {
+                $diff{ exists }->{ $model } = delete $oldmap{ $model };
+            }
+            elsif ( !$oldmap{ $model } ) {
+                $diff{ add }->{ $model } = $map{ $model };
+            }
+        }
+        for my $model ( keys %oldmap ) {
+            $diff{ remove }->{ $model } = delete $oldmap{ $model };
+        }
+        warn "--- Added ---\n";
+        warn join( ",", sort keys %{ $diff{ add } } ), "\n";
+        warn "--- Removed ---\n";
+        warn join( ",", sort keys %{ $diff{ remove } } ), "\n";
     }
     my $overwrite = $ARGV[0] && $ARGV[0] eq '-o';
     output_code( \%map, $overwrite );

@@ -18,7 +18,7 @@ sub functions {
         for keys %{ $inputs_ref->{ headers } };
     my $ma = HTTP::MobileAgent->new( $header );
     my @keys = qw/carrier user_id/;
-    +{ map { $_ => $ma->$_ } @keys };
+    +{ map { $_ => $ma->$_ || '' } @keys };
 }
 
 __END__
@@ -40,6 +40,15 @@ headers:
 --- expected
 carrier: V
 user_id: abcdef0123456789
+
+=== Vodafone
+--- input
+headers:
+  User-Agent: J-PHONE/2.0/J-DN02
+  X-JPHONE-UID:
+--- expected
+carrier: V
+user_id:
 
 === KDDI
 --- input

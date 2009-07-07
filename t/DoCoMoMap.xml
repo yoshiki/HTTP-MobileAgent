@@ -90,6 +90,8 @@
   <terminal color="1" depth="65536" height="198" model="N2102V" width="176" />
   <terminal color="1" depth="65536" height="198" model="N2701" width="176" />
   <terminal color="1" depth="65536" height="144" model="NM850IG" width="176" />
+  <terminal color="1" depth="16777216" height="235" model="NM705I" width="231" />
+  <terminal color="1" depth="16777216" height="235" model="NM706I" width="231" />
   <terminal color="1" depth="262144" height="270" model="D505I" width="240" />
   <terminal color="1" depth="262144" height="240" model="SO505I" width="256" />
   <terminal color="1" depth="262144" height="252" model="SH505I" width="240" />
@@ -202,8 +204,13 @@
   <terminal color="1" depth="262144" height="240" model="D800IDS" width="230" />
   <terminal color="1" depth="262144" height="270" model="P703IMYU" width="240" />
   <terminal color="1" depth="65536" height="256" model="F883I" width="240" />
+  <terminal color="1" depth="65536" height="256" model="F883IS" width="240" />
   <terminal color="1" depth="262144" height="270" model="P704IMYU" width="240" />
   <terminal color="1" depth="262144" height="280" model="L704I" width="240" />
+  <terminal color="1" depth="262144" height="280" model="L705I" width="240" />
+  <terminal color="1" depth="262144" height="280" model="L705IX" width="240" />
+  <terminal color="1" depth="65536" height="298" model="L852I" width="240" />
+  <terminal color="1" depth="262144" height="280" model="L706IE" width="240" />
   <terminal color="1" depth="262144" height="320" model="SH903I" width="240" />
   <terminal color="1" depth="262144" height="270" model="P903I" width="240" />
   <terminal color="1" depth="262144" height="270" model="N903I" width="240" />
@@ -236,6 +243,15 @@
   <terminal color="1" depth="262144" height="240" model="D704I" width="230" />
   <terminal color="1" depth="262144" height="270" model="P704I" width="240" />
   <terminal color="1" depth="65536" height="256" model="F883IES" width="240" />
+  <terminal color="1" depth="65536" height="256" model="F883IESS" width="240" />
+  <terminal color="1" depth="65536" height="352" model="F801I" width="240" />
+  <terminal color="1" depth="262144" height="352" model="F705I" width="240" />
+  <terminal color="1" depth="262144" height="320" model="D705I" width="240" />
+  <terminal color="1" depth="262144" height="240" model="D705IMYU" width="240" />
+  <terminal color="1" depth="262144" height="320" model="SH705I" width="240" />
+  <terminal color="1" depth="262144" height="320" model="SH705III" width="240" />
+  <terminal color="1" depth="262144" height="320" model="SH706IE" width="240" />
+  <terminal color="1" depth="65536" height="352" model="F05A" width="240" />
   <terminal color="1" depth="16777216" height="320" model="SH905I" width="240" />
   <terminal color="1" depth="262144" height="352" model="D905I" width="240" />
   <terminal color="1" depth="262144" height="320" model="N905I" width="240" />
@@ -243,5 +259,62 @@
   <terminal color="1" depth="16777216" height="352" model="F905I" width="240" />
   <terminal color="1" depth="16777216" height="368" model="SO905I" width="240" />
   <terminal color="1" depth="262144" height="320" model="N905IMYU" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N905IBIZ" width="240" />
+  <terminal color="1" depth="16777216" height="320" model="SH905ITV" width="240" />
+  <terminal color="1" depth="16777216" height="368" model="SO905ICS" width="240" />
+  <terminal color="1" depth="16777216" height="352" model="F905IBIZ" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P905ITV" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P705I" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N705I" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N705IMYU" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P705IMYU" width="240" />
+  <terminal color="1" depth="262144" height="320" model="SO705I" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P705ICL" width="240" />
+  <terminal color="1" depth="262144" height="364" model="F884I" width="240" />
+  <terminal color="1" depth="262144" height="282" model="F884IES" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N906IL" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N706I" width="240" />
+  <terminal color="1" depth="262144" height="320" model="SO706I" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P706IMYU" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N706IE" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N706III" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N03A" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N05A" width="240" />
+  <terminal color="1" depth="262144" height="256" model="F07A" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P906I" width="240" />
+  <terminal color="1" depth="16777216" height="368" model="SO906I" width="240" />
+  <terminal color="1" depth="16777216" height="320" model="SH906I" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N906IMYU" width="240" />
+  <terminal color="1" depth="16777216" height="352" model="F906I" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N906I" width="240" />
+  <terminal color="1" depth="16777216" height="320" model="SH906ITV" width="240" />
+  <terminal color="1" depth="262144" height="352" model="F706I" width="240" />
+  <terminal color="1" depth="16777216" height="320" model="SH706I" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P706IE" width="240" />
+  <terminal color="1" depth="16777216" height="320" model="SH706IW" width="240" />
+  <terminal color="1" depth="16777216" height="352" model="F01A" width="240" />
+  <terminal color="1" depth="262144" height="352" model="F02A" width="240" />
+  <terminal color="1" depth="16777216" height="352" model="F03A" width="240" />
+  <terminal color="1" depth="262144" height="352" model="F04A" width="240" />
+  <terminal color="1" depth="16777216" height="352" model="F06A" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P01A" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P02A" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P03A" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P04A" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P05A" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P06A" width="240" />
+  <terminal color="1" depth="262144" height="350" model="P10A" width="240" />
+  <terminal color="1" depth="16777216" height="320" model="SH01A" width="240" />
+  <terminal color="1" depth="16777216" height="320" model="SH02A" width="240" />
+  <terminal color="1" depth="16777216" height="320" model="SH03A" width="240" />
+  <terminal color="1" depth="16777216" height="320" model="SH04A" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N01A" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N02A" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N04A" width="240" />
+  <terminal color="1" depth="262144" height="662" model="P07A" width="480" />
+  <terminal color="1" depth="262144" height="640" model="N06A" width="480" />
+  <terminal color="1" depth="262144" height="648" model="F08A" width="480" />
+  <terminal color="1" depth="16777216" height="648" model="F09A" width="480" />
+  <terminal color="1" depth="16777216" height="592" model="SH05A" width="480" />
 </opt>
 

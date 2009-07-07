@@ -10,16 +10,18 @@ do_task(@ARGV);
 
 sub do_task {
     my $dat = WWW::MobileCarrierJP::DoCoMo::Display->scrape;
-    my %map;
+    my @maps;
     for my $phone (@$dat) {
-        $map{ uc $phone->{model} } = +{
+        $phone->{model} =~ s/-//; # サイト上では N-04A と表記されているが、UA にふくまれているのは N04A なので。
+        push @maps, +{
+            model  => uc $phone->{model},
             width  => $phone->{width},
             height => $phone->{height},
             color  => $phone->{is_color},
             depth  => $phone->{depth},
         };
     }
-    output_code( \%map );
+    output_code( { terminal => \@maps } );
 }
 
 sub output_code {

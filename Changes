@@ -1,5 +1,28 @@
 Revision history for Perl extension HTTP::MobileAgent
 
+0.28 Tue Jul  7 16:02:33 2009
+    * Using HTTP::Headers::Fast (Thanks to Tokuhiro MATSUNO)
+    * Added gps_compliant() method in DoCoMo.pm/EZweb.pm/Vodafone.pm(SoftBank).
+    * Added browser_version() method in DoCoMo.pm.
+    * $GPSModels and is_gps() method was obsolete
+      but leaved for backward compatibility in DoCoMo.pm.
+    * Fixed user_id() problem in Vodafone.pm(SoftBank). (Thanks to masutaro)
+    * Updated $HTMLVerMap.
+    - Added NM705I NM706I SH01A SH02A SH03A SH04A SH706I SH706IW SH905ITV
+      SH906I SH906ITV F01A F03A F06A F905IBIZ F906I SO905ICS SO906I SH05A
+      F09A D705IMYU F07A L705I L705IX L706IE F884IES D705I N01A N02A N03A
+      N04A N05A N705I N705IMYU N706I N706IE N706III N905IBIZ N906I N906IL
+      N906IMYU SH705I SH705III SH706IE SO705I SO706I P01A P02A P03A P04A
+      P05A P06A P10A P705I P705ICL P705IMYU P706IE P706IMYU P905ITV P906I
+      F02A F04A F705I F706I F884I N06A F08A P07A F883IESS F883IS L852I F05A F801I
+      in DoCoMoMap.xml (auto-generated)
+    - Added F01A F02A F03A F04A F05A F06A F07A F08A F09A F706I
+      F883IESS F883IS F884I F884IES F906I L706IE L852I
+      N01A N02A N03A N04A N05A N06A N706I N706IE N706III N906I N906IL N906IMYU
+      NM706I P01A P02A P03A P04A P05A P06A P07A P10A P706IE P706IMYU P906I
+      SH01A SH02A SH03A SH04A SH05A SH706I SH706IE SH706IW SH906I SH906ITV
+      SO706I SO906I in DoCoMoDisplayMap (auto-generated)
+
 0.27 Fri Apr 11 13:34:23 2008
     * Supported user_id to get guid in DoCoMo
     * Using WWW::MobileCarrierJP when get terminal display information

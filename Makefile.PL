@@ -8,6 +8,8 @@ requires 'Scalar::Util' => 1.14;
 
 build_requires 'Test::More' => 0.32;
 
+recommends 'HTTP::Headers::Fast' => 0.11;
+
 use_test_base;
 auto_include;
 WriteAll;

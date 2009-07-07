@@ -75,6 +75,12 @@ sub _make_display {
     );
 }
 
+sub gps_compliant {
+    my $self = shift;
+    my @specs = split //, $ENV{ HTTP_X_UP_DEVCAP_MULTIMEDIA } || '';
+    return defined $specs[ 1 ] && $specs[ 1 ] =~ /^[23]$/;
+}
+
 sub user_id {
     my $self = shift;
     return $self->get_header( 'x-up-subno' );

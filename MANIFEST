@@ -46,4 +46,5 @@ t/09_vodafone_3gc.t
 t/10_softbank.t
 t/11_softbank_base.t
 t/12_guid.t
+t/13_imode_browser.t
 t/DoCoMoMap.xml

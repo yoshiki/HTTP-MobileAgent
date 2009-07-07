@@ -2,7 +2,7 @@ package HTTP::MobileAgent;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = '0.27';
+$VERSION = '0.28';
 
 use HTTP::MobileAgent::Request;
 
@@ -203,6 +203,12 @@ L<HTTP::MobileAgent::Display> for details.
   my $user_id = $agent->user_id;
 
 return X-DCMGUID, X-UP-SUBNO or X-JPHONE-UID.
+
+=item gps_compliant
+
+  if ($agent->gps_compliant) { }
+
+returns if the agent is GPS compliant.
 
 =back
 

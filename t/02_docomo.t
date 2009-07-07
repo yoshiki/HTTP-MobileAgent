@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 910;
+use Test::More tests => 936;
 
 BEGIN { use_ok 'HTTP::MobileAgent' }
 
@@ -38,6 +38,7 @@ my @Tests = (
     [ "DoCoMo/1.0/D505i/c20/TC/W20H10", '1.0', '5.0', 'D505i', 20, undef, 'D', '505i', { status => 'TC' }, 0 ],
     [ "DoCoMo/1.0/SH505i2/c20/TB/W20H10", '1.0', '5.0', 'SH505i', 20, undef, 'SH', '505i', { status => 'TB' }, 0 ],
     [ "DoCoMo/1.0/F661i/c10/TB", '1.0', '4.0', 'F661i', 10, undef, 'F', '661i', { is_gps => 1 }, 0 ],
+    [ "DoCoMo/2.0 P07A3(c500;TB;W24H15)", '2.0', undef, 'P07A3', 500, 1, 'P', 'FOMA', { is_gps => 1, browser_version => '2.0' }, 1 ],
 );
 
 for (@Tests) {
@@ -48,13 +49,13 @@ for (@Tests) {
     ok $agent->is_docomo && ! $agent->is_j_phone && !$agent->is_vodafone && ! $agent->is_ezweb;
     is $agent->name, 'DoCoMo';
     is $agent->user_agent, $ua,		"ua is $ua";
-    is $agent->version, $data[0],	"version is $data[0]";
-    is $agent->html_version, $data[1],	"HTML version is $data[1]";
-    is $agent->model, $data[2],		"model is $data[2]";
-    is $agent->cache_size, $data[3],	"cache size is $data[3]";
+    is $agent->version, $data[0],	"version";
+    is $agent->html_version, $data[1],	"HTML version";
+    is $agent->model, $data[2],		"model";
+    is $agent->cache_size, $data[3],	"cache size";
     is $agent->is_foma, $data[4],	"is_foma";
     is $agent->vendor, $data[5],	"vendor";
-    is $agent->series, $data[6],	"cache size";
+    is $agent->series, $data[6],	"series";
     is $agent->xhtml_compliant, $data[8], "xhtml compliant $ua";
     if ($data[7]) {
 	is $agent->$_(), $data[7]->{$_},"testing $_" for keys %{$data[7]};
@@ -221,3 +222,6 @@ DoCoMo/2.0/N502i
 DoCoMo/2.0/N502it
 DoCoMo/2.0/N503i
 DoCoMo/3.0/N503
+DoCoMo/2.0 N06A3(c500;TB;W24H16)
+DoCoMo/2.0 N04A(c100;TB;W24H16)
+DoCoMo/2.0 N08A(c500;TB;W24H16)

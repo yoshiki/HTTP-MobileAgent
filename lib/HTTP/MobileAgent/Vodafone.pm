@@ -169,9 +169,15 @@ sub xhtml_compliant {
     return ($self->is_type_w || $self->is_type_3gc) ? 1 : 0;
 }
 
+sub gps_compliant {
+    my $self = shift;
+    return $self->is_type_3gc;
+}
+
 sub user_id {
     my $self = shift;
-    return $self->get_header( 'x-jphone-uid' ) unless $self->is_type_c;
+    return if $self->is_type_c;
+    return $self->get_header( 'x-jphone-uid' );
 }
 
 1;

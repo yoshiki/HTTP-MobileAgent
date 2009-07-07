@@ -2,7 +2,7 @@ package HTTP::MobileAgent::DoCoMo;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = 0.19;
+$VERSION = 0.20;
 
 use base qw(HTTP::MobileAgent);
 
@@ -14,22 +14,27 @@ __PACKAGE__->make_accessors(
 use HTTP::MobileAgent::DoCoMoDisplayMap qw($DisplayMap);
 
 # various preferences
-use vars qw($DefaultCacheSize $HTMLVerMap $GPSModels);
+use vars qw($DefaultCacheSize $HTMLVerMap $GPSModels $GPSModelsRe);
 $DefaultCacheSize = 5;
 
 # http://www.nttdocomo.co.jp/service/imode/make/content/spec/useragent/
 $HTMLVerMap = [
     # regex => version
-    qr/[DFNP]501i/ => '1.0',
-    qr/502i|821i|209i|691i|(F|N|P|KO)210i|^F671i$/ => '2.0',
-    qr/(D210i|SO210i)|503i|211i|SH251i|692i|200[12]|2101V/ => '3.0',
-    qr/504i|251i|^F671iS$|^F661i$|^F672i$|212i|SO213i|2051|2102V|2701|850i/ => '4.0',
+    qr/D501i|F501i|N501i|P501i/ => '1.0',
+    qr/D209i|D502i|ER209i|F209i|F210i|F502i|F502it|^F671i$|KO209i|KO210i|N209i|N210i|N502i|N502it|N821i|NM502i|P209iS?|P210i|P502i|P651ps|P821i|R209i|R691i|SH821i|SO502i|SO502iWM/ => '2.0',
+    qr/D2101V|D210i|D211i|D503iS?|F211i|F503iS?|N2001|N2002|N211iS?|N503iS?|P2002|P2101V|P211iS?|P503iS?|R211i|R692i|SH2101V|SH251iS?|SO210i|SO211i|SO503iS?|T2101V/ => '3.0',
     qr/eggy|P751v/ => '3.2',
-    qr/505i|506i|252i|253i|P213i|600i|700i|701i|800i|880i|SH851i|P851i|881i|900i|901i/ => '5.0',
-    qr/702i|D851iWM|902i/ => '6.0',
+    qr/D251iS?|D504i|F2051|F2102V|F212i|F251i|F504iS?|F661i|^F671iS$|F672i|N2051|N2102V|N251iS?|N2701|N504iS?|NM705i|NM706i|NM850iG|P2102V|P251iS|P504iS?|SO212i|SO213iS?|SO213iWR|SO504i/ => '4.0',
+    qr/D252i|D253i|D253iWM|D505iS?|D506i|D701i|D701iWM|D900i|D901iS?|F505i|F505iGPS|F506i|F700iS?|F880iES|F881iES|F900i|F900iC|F900iT|F901iC|F901iS|L600i|L601i|L602i|M702iG|M702iS|N252i|N253i|N505iS?|N506iS?|N506iSII|N600i|N700i|N701i|N701iECO|N900i|N900iG|N900iL|N900iS|N901iC|N901iS|P213i|P252iS?|P253iS?|P505iS?|P506iC|P506iCII|P700i|P701iD|P851i|P900i|P900iV|P901iS?|P901iTV|SA700iS|SA800i|SH252i|SH505iS?|SH506iC|SH700iS?|SH851i|SH900i|SH901iC|SH901iS|SO505iS?|SO506iS?|SO506iC/ => '5.0',
+    qr/D702i|D702iBCL|D702iF|D800iDS|D851iWM|D902iS?|F702iD|F882iES|F883iS?|F902iS?|L01A|L03A|L704i|L705i|L705iX|L706ie|L852i|N601i|N702iD|N702iS|N902iS?|N902iL|N902iX|P702i|P702iD|P703imyu|P704imyu|P902iS?|SA702i|SH702iD|SH702iS|SH902iS?|SH902iSL|SO702i|SO902i|SO902iWP+/ => '6.0',
+    qr/D703i|D704i|D705i|D705imyu|D903i|D903iTV|D904i|F05A|F703i|F704i|F705i|F801i|F883iES|F883iESS|F903i|F903iBSC|F903iX|F904i|N703iD|N703imyu|N704imyu|N903i|N904i|P703i|P704i|P903i|P903iTV|P903iX|P904i|SH703i|SH704i|SH705i|SH705iII|SH706ie|SH903i|SH903iTV|SH904i|SO703i|SO704i|SO903i|SO903iTV/ => '7.0',
+    qr/D905i|F07A|F884i|F884iES|F905i|F905iBiz|N03A|N05A|N705i|N705imyu|N706i|N706iII|N706ie|N905i|N905iBiz|N905imyu|N906iL|P705i|P705iCL|P705imyu|P706imyu|P905i|P905iTV|SH905i|SH905iTV|SO705i|SO706i|SO905i|SO905iCS/ => '7.1',
+    qr/F01A|F02A|F03A|F04A|F06A|F706i|F906i|N01A|N02A|N04A|N906i|N906imyu|P01A|P02A|P03A|P04A|P05A|P06A|P706ie|P906i|SH01A|SH02A|SH03A|SH04A|SH706i|SH706iw|SH906i|SH906iTV|SO906i/ => '7.2',
 ];
 
-$GPSModels = { map { $_ => 1 } qw(F661i F505iGPS) };
+$GPSModels = { map { $_ => 1 } qw(F661i F505iGPS) }; # This value is obsolute,
+                                                     # and will be removed in the near future.
+$GPSModelsRe = qr/D903i|D904i|D905i|F01A|F03A|F05A|F09A|F505iGPS|F661i|F801i|F883iES|F883iESS|F884i|F884iES|F903i|F904i|F905i|F906i|N01A|N02A|N06A|N08A|N09A|N903i|N904i|N905i|N905imyu|N906i|N906i|N906iL|P01A|P02A|P07A|P08A|P09A|P903i|P904i|P905i|P906i|SA700iS|SA702i|SA800i|SH01A|SH02A|SH03A|SH04A|SH05A|SH06A|SH06A|SH07A|SH903i|SH904i|SH905i|SH906i|SO903i|SO905i|SO905iCS|SO906i/;
 
 sub is_docomo { 1 }
 
@@ -121,7 +126,7 @@ sub series {
     my $self = shift;
     my $model = $self->model;
 
-    if ($self->is_foma && $model =~ /\d{4}/) {
+    if ($self->is_foma && $model =~ /(?:\d{4}|\w\d{2}\w\d?)/) {
         return 'FOMA';
     }
 
@@ -149,12 +154,22 @@ sub _make_display {
 
 sub is_gps {
     my $self = shift;
-    return exists $GPSModels->{$self->model};
+    return $self->gps_compliant;
+}
+
+sub gps_compliant {
+    my $self = shift;
+    return $self->model =~ qr/$GPSModelsRe/;
 }
 
 sub user_id {
     my $self = shift;
     return $self->get_header( 'x-dcmguid' );
+}
+
+sub browser_version {
+    my $self = shift;
+    return $self->is_foma && $self->cache_size >= 500 ? '2.0' : '1.0';
 }
 
 1;
@@ -200,6 +215,9 @@ HTTP::MobileAgent::DoCoMo - NTT DoCoMo implementation
 
   # e.g.) "DoCoMo/2.0 SO902i(c100;TB;W30H16)"
   print "XHTML compiant!\n" if $agent->xhtml_compliant;	# true
+
+  # e.g.) "DoCoMo/2.0 P07A(c500;TB;W24H15)"
+  printf "Browser ver: %s\n", $agent->browser_version   # 2.0
 
 =head1 DESCRIPTION
 
@@ -300,6 +318,12 @@ returns status like "TB", "TC", "TD" or "TJ", which means:
   if ($agent->xhtml_compliant) { }
 
 returns if the agent is XHTML compliant.
+
+=item browser_version
+
+  if ($agent->browser_version > 2.0) { }
+
+returns browser version(1.0 or 2.0).
 
 =back
 
