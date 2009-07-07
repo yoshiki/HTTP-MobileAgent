@@ -1,12 +1,29 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         HTTP-MobileAgent
-version:      0.25
-version_from: lib/HTTP/MobileAgent.pm
-installdirs:  site
-requires:
-    HTTP::Headers:                 1.43
-    Test::More:                    0.32
-
+---
+abstract: 'HTTP mobile user agent string parser'
+author:
+  - 'Tatsuhiko Miyagawa <miyagawa@bulknews.net> is the original author and wrote almost all the code.'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+  Test::More: 0.32
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.17
+generated_by: 'Module::Install version 0.91'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: HTTP-MobileAgent
+no_index:
+  directory:
+    - inc
+    - t
+recommends:
+  HTTP::Headers::Fast: 0.11
+requires:
+  HTTP::Headers: 1.43
+  Scalar::Util: 1.14
+  WWW::MobileCarrierJP: 0.04
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.28
