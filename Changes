@@ -1,6 +1,6 @@
 Revision history for Perl extension HTTP::MobileAgent
 
-0.29 Tue Sep  7 05:42:45 GMT 2010
+0.29 Tue Sep  7 05:42:45 2010
     * Added gps_compliant() in AirHPhone.pm
       for HTTP::MobileAgent::Plugin::Locator compatibility.
     * Removed $GPSModels in DoCoMo.pm.
