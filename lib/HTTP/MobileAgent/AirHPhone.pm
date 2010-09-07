@@ -2,7 +2,7 @@ package HTTP::MobileAgent::AirHPhone;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = 0.21;
+$VERSION = 0.22;
 
 use base qw(HTTP::MobileAgent);
 
@@ -30,6 +30,10 @@ sub _make_display {
 }
 
 sub user_id {
+    # XXX
+}
+
+sub gps_compliant {
     # XXX
 }
 

@@ -33,7 +33,7 @@ sub do_task {
                 $diff{ exists }->{ $model } = delete $oldmap{ $model };
             }
             elsif ( !$oldmap{ $model } ) {
-                $diff{ add }->{ $model } = $map{ $model };
+                $diff{ add }->{ $model } = delete $oldmap{ $model };
             }
         }
         for my $model ( keys %oldmap ) {

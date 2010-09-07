@@ -21,6 +21,26 @@ sub do_task {
             depth  => $phone->{depth},
         };
     }
+    my $xml = XML::Simple->new;
+    my $ref = $xml->XMLin( 't/DoCoMoMap.xml' );
+    my %oldmap = ( map { $_->{ model } => 1 } @{ $ref->{ terminal } } );
+    my %diff;
+    for my $map ( @maps ) {
+        my $model = $map->{ model };
+        if ( $oldmap{ $model } ) {
+            $diff{ exists }->{ $model } = delete $oldmap{ $model };
+        }
+        elsif ( !$oldmap{ $model } ) {
+            $diff{ add }->{ $model } = delete $oldmap{ $model };
+        }
+    }
+    for my $model ( keys %oldmap ) {
+        $diff{ remove }->{ $model } = delete $oldmap{ $model };
+    }
+    warn "--- Added ---\n";
+    warn join( ",", sort keys %{ $diff{ add } } ), "\n";
+    warn "--- Removed ---\n";
+    warn join( ",", sort keys %{ $diff{ remove } } ), "\n";
     output_code( { terminal => \@maps } );
 }
 

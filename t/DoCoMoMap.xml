@@ -281,6 +281,9 @@
   <terminal color="1" depth="262144" height="320" model="N03A" width="240" />
   <terminal color="1" depth="262144" height="320" model="N05A" width="240" />
   <terminal color="1" depth="262144" height="256" model="F07A" width="240" />
+  <terminal color="1" depth="262144" height="330" model="F10A" width="240" />
+  <terminal color="1" depth="262144" height="330" model="F09B" width="240" />
+  <terminal color="1" depth="262144" height="320" model="N06B" width="240" />
   <terminal color="1" depth="262144" height="350" model="P906I" width="240" />
   <terminal color="1" depth="16777216" height="368" model="SO906I" width="240" />
   <terminal color="1" depth="16777216" height="320" model="SH906I" width="240" />
@@ -312,9 +315,48 @@
   <terminal color="1" depth="262144" height="320" model="N02A" width="240" />
   <terminal color="1" depth="262144" height="320" model="N04A" width="240" />
   <terminal color="1" depth="262144" height="662" model="P07A" width="480" />
+  <terminal color="1" depth="262144" height="662" model="P08A" width="480" />
+  <terminal color="1" depth="262144" height="662" model="P09A" width="480" />
   <terminal color="1" depth="262144" height="640" model="N06A" width="480" />
+  <terminal color="1" depth="262144" height="640" model="N07A" width="480" />
+  <terminal color="1" depth="262144" height="640" model="N08A" width="480" />
+  <terminal color="1" depth="262144" height="640" model="N09A" width="480" />
   <terminal color="1" depth="262144" height="648" model="F08A" width="480" />
   <terminal color="1" depth="16777216" height="648" model="F09A" width="480" />
   <terminal color="1" depth="16777216" height="592" model="SH05A" width="480" />
+  <terminal color="1" depth="16777216" height="592" model="SH06A" width="480" />
+  <terminal color="1" depth="16777216" height="592" model="SH07A" width="480" />
+  <terminal color="1" depth="16777216" height="592" model="SH08A" width="480" />
+  <terminal color="1" depth="16777216" height="646" model="SH01B" width="480" />
+  <terminal color="1" depth="16777216" height="646" model="SH02B" width="480" />
+  <terminal color="1" depth="16777216" height="592" model="SH03B" width="480" />
+  <terminal color="1" depth="16777216" height="592" model="SH04B" width="480" />
+  <terminal color="1" depth="16777216" height="646" model="SH05B" width="480" />
+  <terminal color="1" depth="16777216" height="646" model="SH06B" width="480" />
+  <terminal color="1" depth="16777216" height="656" model="SH07B" width="480" />
+  <terminal color="1" depth="16777216" height="646" model="SH08B" width="480" />
+  <terminal color="1" depth="16777216" height="646" model="SH09B" width="480" />
+  <terminal color="1" depth="16777216" height="648" model="F01B" width="480" />
+  <terminal color="1" depth="262144" height="648" model="F02B" width="480" />
+  <terminal color="1" depth="262144" height="648" model="F03B" width="480" />
+  <terminal color="1" depth="16777216" height="648" model="F04B" width="480" />
+  <terminal color="1" depth="16777216" height="656" model="F06B" width="480" />
+  <terminal color="1" depth="16777216" height="648" model="F07B" width="480" />
+  <terminal color="1" depth="262144" height="648" model="F08B" width="480" />
+  <terminal color="1" depth="262144" height="648" model="F10B" width="480" />
+  <terminal color="1" depth="262144" height="662" model="P01B" width="480" />
+  <terminal color="1" depth="262144" height="662" model="P02B" width="480" />
+  <terminal color="1" depth="262144" height="662" model="P04B" width="480" />
+  <terminal color="1" depth="262144" height="650" model="P06B" width="480" />
+  <terminal color="1" depth="262144" height="640" model="N01B" width="480" />
+  <terminal color="1" depth="262144" height="640" model="N02B" width="480" />
+  <terminal color="1" depth="262144" height="640" model="N03B" width="480" />
+  <terminal color="1" depth="16777216" height="640" model="N04B" width="480" />
+  <terminal color="1" depth="262144" height="640" model="N05B" width="480" />
+  <terminal color="1" depth="16777216" height="640" model="N07B" width="480" />
+  <terminal color="1" depth="16777216" height="480" model="N08B" width="480" />
+  <terminal color="1" depth="262144" height="331" model="P03B" width="240" />
+  <terminal color="1" depth="262144" height="331" model="P05B" width="240" />
+  <terminal color="1" depth="262144" height="331" model="P07B" width="240" />
+  <terminal color="1" depth="262144" height="660" model="L01B" width="480" />
 </opt>
-

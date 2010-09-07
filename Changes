@@ -1,5 +1,20 @@
 Revision history for Perl extension HTTP::MobileAgent
 
+0.29 Tue Sep  7 05:42:45 GMT 2010
+    * Added gps_compliant() in AirHPhone.pm
+      for HTTP::MobileAgent::Plugin::Locator compatibility.
+    * Removed $GPSModels in DoCoMo.pm.
+    * Updated $HTMLVerMap and $GPSModelsRe in DoCoMo.pm.
+    * Added diff in makexmldocomomap.
+    - Added F01B F02B F03B F04B F06B F07B F08B F09B F10A F10B L01B N01B
+      N02B N03B N04B N05B N06B N07A N07B N08A N08B N09A P01B P02B P03B
+      P04B P05B P06B P07B P08A P09A SH01B SH02B SH03B SH04B SH05B SH06A
+      SH06B SH07A SH07B SH08A SH08B SH09B in DoCoMoDisplayMap (auto-generated)
+    - Added F01B F02B F03B F04B F06B F07B F08B F09B F10A F10B L01B N01B
+      N02B N03B N04B N05B N06B N07A N07B N08A N08B N09A P01B P02B P03B
+      P04B P05B P06B P07B P08A P09A SH01B SH02B SH03B SH04B SH05B SH06A
+      SH06B SH07A SH07B SH08A SH08B SH09B in DoCoMoMap.xml (auto-generated)
+
 0.28 Tue Jul  7 16:02:33 2009
     * Using HTTP::Headers::Fast (Thanks to Tokuhiro MATSUNO)
     * Added gps_compliant() method in DoCoMo.pm/EZweb.pm/Vodafone.pm(SoftBank).
