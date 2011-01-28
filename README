@@ -66,15 +66,6 @@ METHODS
     is_docomo, is_j_phone, is_ezweb
         returns if the agent is DoCoMo or J-Phone or EZWeb.
 
-WARNINGS
-    Following warnings might be raised when $^W is on.
-
-    "%s: no match. Might be new variants. please contact the author of
-    HTTP::MobileAgent!"
-        User-Agent: string does not match patterns provided in subclasses.
-        It may be faked user-agent or a new variant. Feel free to mail me to
-        inform this.
-
 NOTE
     "Why not adding this module as an extension of HTTP::BrowserDetect?"
         Yep, I tried to do. But the module's code seems hard enough for me
@@ -87,11 +78,11 @@ MORE IMPLEMENTATIONS
     me.
 
 CREDITS
-    Satoshi Tanimoto <tanimoto@cpan.org>
-    Yoshiki Kurihara <kurihara@cpan.org>
+    Satoshi Tanimoto <tanimoto __at__ cpan.org>
+    Yoshiki Kurihara <kurihara __at__ cpan.org>
 
 AUTHOR
-    Tatsuhiko Miyagawa <miyagawa@bulknews.net>
+    Tatsuhiko Miyagawa <miyagawa __at__ bulknews.net>
 
 LICENSE
     This library is free software; you can redistribute it and/or modify it
