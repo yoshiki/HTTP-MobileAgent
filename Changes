@@ -1,5 +1,17 @@
 Revision history for Perl extension HTTP::MobileAgent
 
+0.30 Fri Jan 28 12:23:52 2011
+    * Fixed regexp to match with Googlebot-Mobile/2.1
+      in DoCoMo.pm(Thanks to ziguzagu).
+      https://rt.cpan.org/Ticket/Display.html?id=50700
+    * Changed $GPSModelsRe to disable SH905iTV in DoCoMo.pm(Thanks to hirafoo).
+    * Fixed gps_compliant() how to get 'x-up-devcap-multimedia'
+      in EZweb.pm(Thanks to nekokak).
+    - Added F01C F02C F03C F04C L01C L03C N01C N02C N03C P01C P02C
+      P03C SH01C SH02C SH04C SH05C in DoCoMoDisplayMap (auto-generated)
+    - Added F01C F02C F03C F04C L01C L03C N01C N02C N03C P01C P02C
+      P03C SH01C SH02C SH04C SH05C in DoCoMoMap.xml (auto-generated)
+
 0.29 Tue Sep  7 05:42:45 2010
     * Added gps_compliant() in AirHPhone.pm
       for HTTP::MobileAgent::Plugin::Locator compatibility.

@@ -1,27 +1,38 @@
 use strict;
-use Test::More tests => 508;
+use Test::More tests => 522;
 
 BEGIN { use_ok 'HTTP::MobileAgent' }
 
 my @Tests = (
-    # ua, version, device_id, server, xhtml_compliant, comment, is_wap1, is_wap2
+    # ua, version, device_id, server, xhtml_compliant, comment, is_wap1, is_wap2, is_win, is_tuka, x-up-devcap-multimedia
     [ 'UP.Browser/3.01-HI01 UP.Link/3.4.5.2',
-      '3.01', 'HI01', 'UP.Link/3.4.5.2', undef, undef, 1, undef ],
+      '3.01', 'HI01', 'UP.Link/3.4.5.2', undef, undef, 1, undef,
+      0, undef, undef ],
     [ 'KDDI-TS21 UP.Browser/6.0.2.276 (GUI) MMP/1.1',
-      '6.0.2.276 (GUI)', 'TS21', 'MMP/1.1', 1, undef, undef, 1 ],
+      '6.0.2.276 (GUI)', 'TS21', 'MMP/1.1', 1, undef, undef, 1,
+      0, undef, undef ],
     [ 'UP.Browser/3.04-TS14 UP.Link/3.4.4 (Google WAP Proxy/1.0)',
-      '3.04', 'TS14', 'UP.Link/3.4.4', undef, 'Google WAP Proxy/1.0', 1, undef ],
+      '3.04', 'TS14', 'UP.Link/3.4.4', undef, 'Google WAP Proxy/1.0', 1, undef,
+      0, undef, undef ],
     [ 'UP.Browser/3.04-TST4 UP.Link/3.4.5.6',
-      '3.04', 'TST4', 'UP.Link/3.4.5.6', undef, undef, 1, undef ],
+      '3.04', 'TST4', 'UP.Link/3.4.5.6', undef, undef, 1, undef,
+      0, 1, undef ],
     [ 'KDDI-KCU1 UP.Browser/6.2.0.5.1 (GUI) MMP/2.0',
-      '6.2.0.5.1 (GUI)', 'KCU1', 'MMP/2.0', 1, undef, undef, 1 ],
+      '6.2.0.5.1 (GUI)', 'KCU1', 'MMP/2.0', 1, undef, undef, 1,
+      0, 1, undef ],
     [ 'KDDI-SN31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0',
-      '6.2.0.7.3.129 (GUI)','SN31','MMP/2.0', 1, undef, undef, 1 ],
+      '6.2.0.7.3.129 (GUI)','SN31','MMP/2.0', 1, undef, undef, 1,
+      1, undef, undef ],
+    [ 'KDDI-CA3F UP.Browser/6.2_7.2.7.1.K.4.306 (GUI) MMP/2.0',
+      '6.2_7.2.7.1.K.4.306 (GUI)', 'CA3F', 'MMP/2.0', 1, undef, undef, 1,
+      1, undef, '6300741122301120' ],
 );
 
 for (@Tests) {
     my($ua, @data) = @$_;
-    my $agent = HTTP::MobileAgent->new($ua);
+    local $ENV{ HTTP_USER_AGENT } = $ua;
+    local $ENV{ HTTP_X_UP_DEVCAP_MULTIMEDIA } = $data[9];
+    my $agent = HTTP::MobileAgent->new;
     isa_ok $agent, 'HTTP::MobileAgent';
     isa_ok $agent, 'HTTP::MobileAgent::EZweb';
     is $agent->name, 'UP.Browser';
@@ -36,18 +47,10 @@ for (@Tests) {
     ok $agent->is_wap1 if $data[5];
     ok $agent->is_wap2 if $data[6];
 
-    if ($ua eq 'UP.Browser/3.04-TST4 UP.Link/3.4.5.6' 
-        or $ua eq 'KDDI-KCU1 UP.Browser/6.2.0.5.1 (GUI) MMP/2.0'){
-        ok $agent->is_tuka;
-    } else {
-        ok !$agent->is_tuka;
-    }
+    is $agent->is_win, $data[7];
+    is $agent->is_tuka, $data[8];
 
-    if ($ua eq 'KDDI-SN31 UP.Browser/6.2.0.7.3.129 (GUI) MMP/2.0'){
-        ok $agent->is_win;
-    } else {
-        ok !$agent->is_win;
-    }
+    ok $agent->gps_compliant if $data[9];
 }
 
 while (<DATA>) {

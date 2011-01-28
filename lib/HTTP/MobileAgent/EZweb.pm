@@ -2,7 +2,7 @@ package HTTP::MobileAgent::EZweb;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = 0.20;
+$VERSION = 0.21;
 
 use base qw(HTTP::MobileAgent);
 
@@ -77,7 +77,7 @@ sub _make_display {
 
 sub gps_compliant {
     my $self = shift;
-    my @specs = split //, $ENV{ HTTP_X_UP_DEVCAP_MULTIMEDIA } || '';
+    my @specs = split //, $self->get_header('x-up-devcap-multimedia') || '';
     return defined $specs[ 1 ] && $specs[ 1 ] =~ /^[23]$/;
 }
 

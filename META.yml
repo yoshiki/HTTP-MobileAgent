@@ -4,11 +4,10 @@ author:
   - 'Tatsuhiko Miyagawa <miyagawa@bulknews.net> is the original author and wrote almost all the code.'
 build_requires:
   ExtUtils::MakeMaker: 6.42
-  Test::More: 0.32
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.91'
+generated_by: 'Module::Install version 1.00'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -21,9 +20,10 @@ no_index:
 recommends:
   HTTP::Headers::Fast: 0.11
 requires:
+  Filter::Util::Call: 0
   HTTP::Headers: 1.43
   Scalar::Util: 1.14
   WWW::MobileCarrierJP: 0.04
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.28
+version: 0.30

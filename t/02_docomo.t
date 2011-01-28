@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 936;
+use Test::More tests => 985;
 
 BEGIN { use_ok 'HTTP::MobileAgent' }
 
@@ -39,6 +39,9 @@ my @Tests = (
     [ "DoCoMo/1.0/SH505i2/c20/TB/W20H10", '1.0', '5.0', 'SH505i', 20, undef, 'SH', '505i', { status => 'TB' }, 0 ],
     [ "DoCoMo/1.0/F661i/c10/TB", '1.0', '4.0', 'F661i', 10, undef, 'F', '661i', { is_gps => 1 }, 0 ],
     [ "DoCoMo/2.0 P07A3(c500;TB;W24H15)", '2.0', undef, 'P07A3', 500, 1, 'P', 'FOMA', { is_gps => 1, browser_version => '2.0' }, 1 ],
+    [ "DoCoMo/2.0 N905i(c100;TB;W24H16) (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)", '2.0', '7.1', 'N905i', 100, 1, 'N', 'FOMA', {}, 1 ],
+    [ "DoCoMo/2.0 SH905i(c100;TB;W24H12)", '2.0', '7.1', 'SH905i', 100, 1, 'SH', 'FOMA', { is_gps => 1, browser_version => '1.0' }, 1 ],
+    [ "DoCoMo/2.0 SH905iTV(c100;TB;W24H12)", '2.0', '7.1', 'SH905iTV', 100, 1, 'SH', 'FOMA', { is_gps => '', browser_version => '1.0' }, 1 ],
 );
 
 for (@Tests) {
