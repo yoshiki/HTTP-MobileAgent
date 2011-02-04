@@ -1,5 +1,8 @@
 Revision history for Perl extension HTTP::MobileAgent
 
+0.31
+    * Work with PSGI env hash (lestrrat)
+
 0.30 Fri Jan 28 12:23:52 2011
     * Fixed regexp to match with Googlebot-Mobile/2.1
       in DoCoMo.pm(Thanks to ziguzagu).

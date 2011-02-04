@@ -116,9 +116,21 @@ HTTP::MobileAgent - HTTP mobile user agent string parser
 
   use HTTP::MobileAgent;
 
+  # from PSGI $env hash:
+  my $agent = HTTP::MobileAgent->new( $env );
+
+  # from %ENV (CGI mode):
+  my $agent = HTTP::MobileAgent->new();
+
+  # from Apache (mod_perl 1.x):
   my $agent = HTTP::MobileAgent->new(Apache->request);
-  # or $agent = HTTP::MobileAgent->new; to get from %ENV
-  # or $agent = HTTP::MobileAgent->new($agent_string);
+
+  # from a HTTP::Headers / HTTP::Request object:
+  my $agent = HTTP::MobileAgent->new( HTTP::Headers->new( ... ) );
+  my $agent = HTTP::MobileAgent->new( HTTP::Request->new( ... ) );
+
+  # from a raw user agent string:
+  my $agent = HTTP::MobileAgent->new($agent_string);
 
   if ($agent->is_docomo) {
       # or if ($agent->name eq 'DoCoMo')
@@ -154,16 +166,28 @@ common methods are also overrided in some subclasses.
 
 =item new
 
-  $agent = HTTP::MobileAgent->new;
-  $agent = HTTP::MobileAgent->new($r);	# Apache or HTTP::Request
+  $agent = HTTP::MobileAgent->new;       # from %ENV
+  $agent = HTTP::MobileAgent->new($env); # PSGI env hash
+  $agent = HTTP::MobileAgent->new($r);	 # Apache or HTTP::Request
   $agent = HTTP::MobileAgent->new($ua_string);
 
-parses HTTP headers and constructs HTTP::MobileAgent subclass
-instance. If no argument is supplied, $ENV{HTTP_*} is used.
+Parses HTTP headers and constructs HTTP::MobileAgent subclass
+instance.
 
-Note that you nees to pass Aapche or HTTP::Requet object to new(), as
-some mobile agents put useful information on HTTP headers other than
-only C<User-Agent:> (like C<x-jphone-msname> in J-Phone).
+If no argument is supplied, $ENV{HTTP_*} is used (i.e., expects a CGI
+environment to be setup)
+
+If a single hash reference is given, then that hash is treated as a
+PSGI environment hash.
+
+If a blessed reference which is based on Apache (mod_perl 1.x),
+HTTP::Headers or HTTP::Request is passed, those will be used 
+accordingly to parse data.
+
+If a single scalar is given, then that is taken to be a raw user agent
+string. Note that most likely this form of usage will not give you much
+information, as some mobile agents put useful information on HTTP headers
+other than only C<User-Agent:> (like C<x-jphone-msname> in J-Phone).
 
 =item user_agent
 

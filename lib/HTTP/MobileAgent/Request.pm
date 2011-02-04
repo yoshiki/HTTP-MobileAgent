@@ -5,16 +5,27 @@ use Scalar::Util ();
 sub new {
     my($class, $stuff) = @_;
     if (!defined $stuff) {
-	bless { env => \%ENV }, 'HTTP::MobileAgent::Request::Env';
+        bless { env => \%ENV }, 'HTTP::MobileAgent::Request::Env';
+    }
+    elsif (ref $stuff eq 'HASH') {
+        # PSGI hash - translate it to an HTTP::Headers object
+        require HTTP::Headers;
+        my $hdrs = HTTP::Headers->new(
+            map {
+                (my $field = $_) =~ s/^HTTPS?_//;
+                ( $field => $stuff->{$_} );        }
+            grep { /^(?:HTTP|CONTENT|COOKIE)/i } keys %$stuff
+        );
+        bless { r => $hdrs }, 'HTTP::MobileAgent::Request::HTTPHeaders';
     }
     elsif (UNIVERSAL::isa($stuff, 'Apache')) {
-	bless { r => $stuff }, 'HTTP::MobileAgent::Request::Apache';
+        bless { r => $stuff }, 'HTTP::MobileAgent::Request::Apache';
     }
     elsif (Scalar::Util::blessed($stuff) && $stuff->isa('HTTP::Headers')) {
-	bless { r => $stuff }, 'HTTP::MobileAgent::Request::HTTPHeaders';
+        bless { r => $stuff }, 'HTTP::MobileAgent::Request::HTTPHeaders';
     }
     else {
-	bless { env => { HTTP_USER_AGENT => $stuff } }, 'HTTP::MobileAgent::Request::Env';
+        bless { env => { HTTP_USER_AGENT => $stuff } }, 'HTTP::MobileAgent::Request::Env';
     }
 }
 
