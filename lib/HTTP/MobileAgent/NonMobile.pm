@@ -2,7 +2,7 @@ package HTTP::MobileAgent::NonMobile;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = 0.02;
+$VERSION = 0.03;
 use base qw(HTTP::MobileAgent);
 
 __PACKAGE__->make_accessors(
@@ -25,6 +25,18 @@ sub carrier { 'N' }
 sub carrier_longname { 'NonMobile' }
 
 sub xhtml_compliant { 1 }
+
+sub _make_display {
+    # XXX
+}
+
+sub user_id {
+    # XXX
+}
+
+sub gps_compliant {
+    # XXX
+}
 
 1;
 __END__

@@ -2,7 +2,7 @@ package HTTP::MobileAgent;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = '0.31';
+$VERSION = '0.32';
 
 use HTTP::MobileAgent::Request;
 

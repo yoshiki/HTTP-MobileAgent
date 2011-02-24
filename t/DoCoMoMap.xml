@@ -358,6 +358,7 @@
   <terminal color="1" depth="16777216" height="480" model="N08B" width="480" />
   <terminal color="1" depth="262144" height="662" model="P02C" width="480" />
   <terminal color="1" depth="262144" height="648" model="F04C" width="480" />
+  <terminal color="1" depth="262144" height="648" model="F05C" width="480" />
   <terminal color="1" depth="16777216" height="320" model="L03C" width="240" />
   <terminal color="1" depth="262144" height="331" model="P03B" width="240" />
   <terminal color="1" depth="262144" height="331" model="P05B" width="240" />
@@ -371,6 +372,7 @@
   <terminal color="1" depth="16777216" height="656" model="SH02C" width="480" />
   <terminal color="1" depth="16777216" height="656" model="SH04C" width="480" />
   <terminal color="1" depth="16777216" height="592" model="SH05C" width="480" />
+  <terminal color="1" depth="16777216" height="592" model="SH06C" width="480" />
   <terminal color="1" depth="16777216" height="656" model="F01C" width="480" />
   <terminal color="1" depth="16777216" height="656" model="F02C" width="480" />
   <terminal color="1" depth="16777216" height="656" model="F03C" width="480" />

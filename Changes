@@ -1,6 +1,12 @@
 Revision history for Perl extension HTTP::MobileAgent
 
-0.31
+0.32 Thu Feb 24 12:17:49 2011
+    * Added _make_display(), user_id(), gps_compliant() in NonMobile.pm.
+      (Thanks to tokuhirom)
+    - Added F05C SH06C in DoCoMoDisplayMap (auto-generated)
+    - Added F05C SH06C in DoCoMoMap.xml (auto-generated)
+
+0.31 Fri Feb  4 14:20:07 2011
     * Work with PSGI env hash (lestrrat)
 
 0.30 Fri Jan 28 12:23:52 2011

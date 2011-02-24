@@ -338,6 +338,12 @@ $DisplayMap ||= {
     'height' => '352',
     'width' => '240'
   },
+  'F05C' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '648',
+    'width' => '480'
+  },
   'F06A' => {
     'color' => 1,
     'depth' => '16777216',
@@ -1878,6 +1884,12 @@ $DisplayMap ||= {
     'color' => 1,
     'depth' => '16777216',
     'height' => '646',
+    'width' => '480'
+  },
+  'SH06C' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '592',
     'width' => '480'
   },
   'SH07A' => {
