@@ -2,7 +2,7 @@ package HTTP::MobileAgent::EZweb;
 
 use strict;
 use vars qw($VERSION);
-$VERSION = 0.21;
+$VERSION = 0.22;
 
 use base qw(HTTP::MobileAgent);
 
@@ -30,7 +30,7 @@ sub is_tuka {
 sub is_win {
   my $self = shift;
   my $win = substr($self->device_id, 2, 1);
-  $win eq '3' ? 1 : 0;
+  return $win =~ /^\d$/ && $win >= 3 ? 1 : 0;
 }
 
 sub parse {

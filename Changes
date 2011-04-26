@@ -1,5 +1,11 @@
 Revision history for Perl extension HTTP::MobileAgent
 
+0.33 Tue Apr 26 18:18:49 2011
+    * Fixed condition of is_win() for new some ezweb terminals
+      (ex. KC41, KC42, KC43) in EZweb.pm.
+    - Added F08C SH08C SH09C in DoCoMoDisplayMap (auto-generated)
+    - Added F08C SH08C SH09C in DoCoMoMap.xml (auto-generated)
+
 0.32 Thu Feb 24 12:17:49 2011
     * Added _make_display(), user_id(), gps_compliant() in NonMobile.pm.
       (Thanks to tokuhirom)
