@@ -1,6 +1,6 @@
 Revision history for Perl extension HTTP::MobileAgent
 
-0.34 Tue Jan 10 20:21:25 2012
+0.35 Tue Jan 10 20:50:36 2012
     * Updated $HTMLVerMap and $GPSModelsRe in DoCoMo.pm.
 
 0.33 Tue Apr 26 18:18:49 2011
