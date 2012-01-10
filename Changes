@@ -1,5 +1,8 @@
 Revision history for Perl extension HTTP::MobileAgent
 
+0.34 Tue Jan 10 20:21:25 2012
+    * Updated $HTMLVerMap and $GPSModelsRe in DoCoMo.pm.
+
 0.33 Tue Apr 26 18:18:49 2011
     * Fixed condition of is_win() for new some ezweb terminals
       (ex. KC41, KC42, KC43) in EZweb.pm.
