@@ -17,8 +17,8 @@ sub functions {
     $header->header( $_ => $inputs_ref->{ headers }->{ $_ } )
         for keys %{ $inputs_ref->{ headers } };
     my $ma = HTTP::MobileAgent->new( $header );
-    my @keys = qw/carrier browser_version/;
-    +{ map { $_ => $ma->$_ } @keys };
+    my @keys = qw/carrier browser_version width height/;
+    +{ map { $_ => $_ =~ /width|height/ ? $ma->display->$_ : $ma->$_ } @keys };
 }
 
 __END__
@@ -30,6 +30,8 @@ headers:
 --- expected
 carrier: I
 browser_version: 1.0
+width: 240
+height: 320
 
 === DoCoMo
 --- input
@@ -38,3 +40,5 @@ headers:
 --- expected
 carrier: I
 browser_version: 2.0
+width: 480
+height: 662

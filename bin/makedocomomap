@@ -17,6 +17,7 @@ sub do_task {
     my %map;
     for my $phone (@$dat) {
         $phone->{model} =~ s/-//; # サイト上では N-04A と表記されているが、UA にふくまれているのは N04A なので。
+        $phone->{model} =~ s/^(?:P0[789]|N0[6789]|F0[89]|SH0[567])A$/$&3/; # 型番とUAが一致しない機種
         $map{ uc $phone->{model} } = +{
             width  => $phone->{width},
             height => $phone->{height},
