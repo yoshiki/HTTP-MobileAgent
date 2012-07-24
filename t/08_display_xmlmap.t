@@ -6,7 +6,7 @@ if ($@) {
     plan skip_all => 'XML::Simple not installed';
 }
 else {
-    plan tests => 64;
+    plan tests => 51;
     $ENV{DOCOMO_MAP} = 't/DoCoMoMap.xml';
     use_ok 'HTTP::MobileAgent';
 }
@@ -25,14 +25,6 @@ my @Tests = (
         HTTP_X_UP_DEVCAP_SCREENDEPTH => '1',
         HTTP_X_UP_DEVCAP_ISCOLOR => 0 },
       { width => 90, height => 70, color => '', depth => 2 }, ],
-    [ { HTTP_USER_AGENT => 'DoCoMo/1.0/D501i' },
-      { width => 96, height => 72, color => '', depth => 2 } ],
-    [ { HTTP_USER_AGENT => 'DoCoMo/1.0/D502i' },
-      { width => 96, height => 90, color => 1, depth => 256 } ],
-    [ { HTTP_USER_AGENT => 'DoCoMo/1.0/N502i' },
-      { width => 118, height => 128, color => '', depth => 4 } ],
-    [ { HTTP_USER_AGENT => "DoCoMo/1.0/D505i/c20/TC/W20H10" },
-      { width_bytes => 20, height_bytes => 10 } ],
     [ { HTTP_USER_AGENT => "DoCoMo/2.0 SH902i(c100;TB;W24H12)" },
       { width => 240, height => 240, color => 1, depth => 262144 } ],
     [ { HTTP_USER_AGENT => "DoCoMo/2.0 N902i(c100;TB;W24H12)" },
@@ -43,6 +35,8 @@ my @Tests = (
       { width => 230, height => 240, color => 1, depth => 262144 } ],
     [ { HTTP_USER_AGENT => 'DoCoMo/2.0 N703imyu' },
       { width => 240, height => 270, color => 1, depth => 262144 } ],
+    [ { HTTP_USER_AGENT => 'DoCoMo/2.0 P08A3' },
+      { width => 480, height => 662, color => 1, depth => 262144 } ],
     [ { HTTP_USER_AGENT => "DoCoMo/2.0 SO902iWP+(c100;TB;W24H12)" },
       { width => 240, height => 256, color => 1, depth => 262144 } ],
 );

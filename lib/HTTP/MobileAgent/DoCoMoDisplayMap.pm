@@ -32,107 +32,17 @@ BEGIN {
 }
 
 $DisplayMap ||= {
-  'D209I' => {
+  'CA01C' => {
     'color' => 1,
-    'depth' => '256',
-    'height' => '90',
-    'width' => '96'
+    'depth' => '16777216',
+    'height' => '650',
+    'width' => '480'
   },
   'D2101V' => {
     'color' => 1,
     'depth' => '262144',
     'height' => '130',
     'width' => '120'
-  },
-  'D210I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '91',
-    'width' => '96'
-  },
-  'D211I' => {
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '91',
-    'width' => '100'
-  },
-  'D251I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '144',
-    'width' => '132'
-  },
-  'D251IS' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '144',
-    'width' => '132'
-  },
-  'D252I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '198',
-    'width' => '176'
-  },
-  'D253I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '198',
-    'width' => '176'
-  },
-  'D253IWM' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '144',
-    'width' => '220'
-  },
-  'D501I' => {
-    'color' => '',
-    'depth' => '2',
-    'height' => '72',
-    'width' => '96'
-  },
-  'D502I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '90',
-    'width' => '96'
-  },
-  'D503I' => {
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '126',
-    'width' => '132'
-  },
-  'D503IS' => {
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '126',
-    'width' => '132'
-  },
-  'D504I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '144',
-    'width' => '132'
-  },
-  'D505I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270',
-    'width' => '240'
-  },
-  'D505IS' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270',
-    'width' => '240'
-  },
-  'D506I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270',
-    'width' => '240'
   },
   'D701I' => {
     'color' => 1,
@@ -254,12 +164,6 @@ $DisplayMap ||= {
     'height' => '352',
     'width' => '240'
   },
-  'ER209I' => {
-    'color' => '',
-    'depth' => '2',
-    'height' => '72',
-    'width' => '120'
-  },
   'F01A' => {
     'color' => 1,
     'depth' => '16777216',
@@ -291,6 +195,12 @@ $DisplayMap ||= {
     'width' => '480'
   },
   'F02C' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '656',
+    'width' => '480'
+  },
+  'F02D' => {
     'color' => 1,
     'depth' => '16777216',
     'height' => '656',
@@ -332,6 +242,12 @@ $DisplayMap ||= {
     'height' => '648',
     'width' => '480'
   },
+  'F04D' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '656',
+    'width' => '480'
+  },
   'F05A' => {
     'color' => 1,
     'depth' => '65536',
@@ -356,6 +272,12 @@ $DisplayMap ||= {
     'height' => '656',
     'width' => '480'
   },
+  'F06D' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '656',
+    'width' => '480'
+  },
   'F07A' => {
     'color' => 1,
     'depth' => '262144',
@@ -368,7 +290,13 @@ $DisplayMap ||= {
     'height' => '648',
     'width' => '480'
   },
-  'F08A' => {
+  'F07C' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '630',
+    'width' => '480'
+  },
+  'F08A3' => {
     'color' => 1,
     'depth' => '262144',
     'height' => '648',
@@ -386,7 +314,7 @@ $DisplayMap ||= {
     'height' => '330',
     'width' => '240'
   },
-  'F09A' => {
+  'F09A3' => {
     'color' => 1,
     'depth' => '16777216',
     'height' => '648',
@@ -397,6 +325,12 @@ $DisplayMap ||= {
     'depth' => '262144',
     'height' => '330',
     'width' => '240'
+  },
+  'F09C' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '656',
+    'width' => '480'
   },
   'F10A' => {
     'color' => 1,
@@ -410,131 +344,29 @@ $DisplayMap ||= {
     'height' => '648',
     'width' => '480'
   },
+  'F10C' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '656',
+    'width' => '480'
+  },
+  'F11C' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '648',
+    'width' => '480'
+  },
   'F2051' => {
     'color' => 1,
     'depth' => '65536',
     'height' => '182',
     'width' => '176'
   },
-  'F209I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '91',
-    'width' => '96'
-  },
   'F2102V' => {
     'color' => 1,
     'depth' => '65536',
     'height' => '182',
     'width' => '176'
-  },
-  'F210I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '113',
-    'width' => '96'
-  },
-  'F211I' => {
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '113',
-    'width' => '96'
-  },
-  'F212I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '136',
-    'width' => '132'
-  },
-  'F251I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '140',
-    'width' => '132'
-  },
-  'F501I' => {
-    'color' => '',
-    'depth' => '2',
-    'height' => '84',
-    'width' => '112'
-  },
-  'F502I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '91',
-    'width' => '96'
-  },
-  'F502IT' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '91',
-    'width' => '96'
-  },
-  'F503I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '130',
-    'width' => '120'
-  },
-  'F503IS' => {
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '130',
-    'width' => '120'
-  },
-  'F504I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '136',
-    'width' => '132'
-  },
-  'F504IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '136',
-    'width' => '132'
-  },
-  'F505I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '268',
-    'width' => '240'
-  },
-  'F505IGPS' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '268',
-    'width' => '240'
-  },
-  'F506I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '268',
-    'width' => '240'
-  },
-  'F661I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '136',
-    'width' => '132'
-  },
-  'F671I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '126',
-    'width' => '120'
-  },
-  'F671IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '120',
-    'width' => '160'
-  },
-  'F672I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '120',
-    'width' => '160'
   },
   'F700I' => {
     'color' => 1,
@@ -722,18 +554,6 @@ $DisplayMap ||= {
     'height' => '352',
     'width' => '240'
   },
-  'KO209I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '96',
-    'width' => '96'
-  },
-  'KO210I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '96',
-    'width' => '96'
-  },
   'L01B' => {
     'color' => 1,
     'depth' => '262144',
@@ -750,6 +570,12 @@ $DisplayMap ||= {
     'color' => 1,
     'depth' => '16777216',
     'height' => '320',
+    'width' => '240'
+  },
+  'L10C' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '330',
     'width' => '240'
   },
   'L600I' => {
@@ -848,6 +674,12 @@ $DisplayMap ||= {
     'height' => '650',
     'width' => '480'
   },
+  'N02D' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '650',
+    'width' => '480'
+  },
   'N03A' => {
     'color' => 1,
     'depth' => '262144',
@@ -861,6 +693,12 @@ $DisplayMap ||= {
     'width' => '480'
   },
   'N03C' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '650',
+    'width' => '480'
+  },
+  'N03D' => {
     'color' => 1,
     'depth' => '16777216',
     'height' => '650',
@@ -890,7 +728,13 @@ $DisplayMap ||= {
     'height' => '640',
     'width' => '480'
   },
-  'N06A' => {
+  'N05C' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '650',
+    'width' => '480'
+  },
+  'N06A3' => {
     'color' => 1,
     'depth' => '262144',
     'height' => '640',
@@ -902,7 +746,7 @@ $DisplayMap ||= {
     'height' => '320',
     'width' => '240'
   },
-  'N07A' => {
+  'N07A3' => {
     'color' => 1,
     'depth' => '262144',
     'height' => '640',
@@ -914,7 +758,7 @@ $DisplayMap ||= {
     'height' => '640',
     'width' => '480'
   },
-  'N08A' => {
+  'N08A3' => {
     'color' => 1,
     'depth' => '262144',
     'height' => '640',
@@ -926,7 +770,7 @@ $DisplayMap ||= {
     'height' => '480',
     'width' => '480'
   },
-  'N09A' => {
+  'N09A3' => {
     'color' => 1,
     'depth' => '262144',
     'height' => '640',
@@ -950,137 +794,17 @@ $DisplayMap ||= {
     'height' => '198',
     'width' => '176'
   },
-  'N209I' => {
-    'color' => '',
-    'depth' => '4',
-    'height' => '82',
-    'width' => '108'
-  },
   'N2102V' => {
     'color' => 1,
     'depth' => '65536',
     'height' => '198',
     'width' => '176'
   },
-  'N210I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '113',
-    'width' => '118'
-  },
-  'N211I' => {
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '128',
-    'width' => '118'
-  },
-  'N211IS' => {
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '128',
-    'width' => '118'
-  },
-  'N251I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '140',
-    'width' => '132'
-  },
-  'N251IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '140',
-    'width' => '132'
-  },
-  'N252I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '140',
-    'width' => '132'
-  },
-  'N253I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '180',
-    'width' => '160'
-  },
   'N2701' => {
     'color' => 1,
     'depth' => '65536',
     'height' => '198',
     'width' => '176'
-  },
-  'N501I' => {
-    'color' => '',
-    'depth' => '2',
-    'height' => '128',
-    'width' => '118'
-  },
-  'N502I' => {
-    'color' => '',
-    'depth' => '4',
-    'height' => '128',
-    'width' => '118'
-  },
-  'N502IT' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '128',
-    'width' => '118'
-  },
-  'N503I' => {
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '128',
-    'width' => '118'
-  },
-  'N503IS' => {
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '128',
-    'width' => '118'
-  },
-  'N504I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '180',
-    'width' => '160'
-  },
-  'N504IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '180',
-    'width' => '160'
-  },
-  'N505I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270',
-    'width' => '240'
-  },
-  'N505IS' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '270',
-    'width' => '240'
-  },
-  'N506I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '295',
-    'width' => '240'
-  },
-  'N506IS' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '295',
-    'width' => '240'
-  },
-  'N506ISII' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '295',
-    'width' => '240'
   },
   'N600I' => {
     'color' => 1,
@@ -1171,12 +895,6 @@ $DisplayMap ||= {
     'depth' => '262144',
     'height' => '320',
     'width' => '240'
-  },
-  'N821I' => {
-    'color' => '',
-    'depth' => '4',
-    'height' => '128',
-    'width' => '118'
   },
   'N900I' => {
     'color' => 1,
@@ -1286,12 +1004,6 @@ $DisplayMap ||= {
     'height' => '320',
     'width' => '240'
   },
-  'NM502I' => {
-    'color' => '',
-    'depth' => '2',
-    'height' => '106',
-    'width' => '111'
-  },
   'NM705I' => {
     'color' => 1,
     'depth' => '16777216',
@@ -1364,6 +1076,12 @@ $DisplayMap ||= {
     'height' => '650',
     'width' => '480'
   },
+  'P03D' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '650',
+    'width' => '480'
+  },
   'P04A' => {
     'color' => 1,
     'depth' => '262144',
@@ -1374,6 +1092,12 @@ $DisplayMap ||= {
     'color' => 1,
     'depth' => '262144',
     'height' => '662',
+    'width' => '480'
+  },
+  'P04C' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '650',
     'width' => '480'
   },
   'P05A' => {
@@ -1388,6 +1112,12 @@ $DisplayMap ||= {
     'height' => '331',
     'width' => '240'
   },
+  'P05C' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '650',
+    'width' => '480'
+  },
   'P06A' => {
     'color' => 1,
     'depth' => '262144',
@@ -1400,7 +1130,13 @@ $DisplayMap ||= {
     'height' => '650',
     'width' => '480'
   },
-  'P07A' => {
+  'P06C' => {
+    'color' => 1,
+    'depth' => '262144',
+    'height' => '650',
+    'width' => '480'
+  },
+  'P07A3' => {
     'color' => 1,
     'depth' => '262144',
     'height' => '662',
@@ -1412,13 +1148,13 @@ $DisplayMap ||= {
     'height' => '331',
     'width' => '240'
   },
-  'P08A' => {
+  'P08A3' => {
     'color' => 1,
     'depth' => '262144',
     'height' => '662',
     'width' => '480'
   },
-  'P09A' => {
+  'P09A3' => {
     'color' => 1,
     'depth' => '262144',
     'height' => '662',
@@ -1436,18 +1172,6 @@ $DisplayMap ||= {
     'height' => '128',
     'width' => '118'
   },
-  'P209I' => {
-    'color' => '',
-    'depth' => '4',
-    'height' => '87',
-    'width' => '96'
-  },
-  'P209IS' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '87',
-    'width' => '96'
-  },
   'P2101V' => {
     'color' => 1,
     'depth' => '262144',
@@ -1459,126 +1183,6 @@ $DisplayMap ||= {
     'depth' => '262144',
     'height' => '198',
     'width' => '176'
-  },
-  'P210I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '91',
-    'width' => '96'
-  },
-  'P211I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '130',
-    'width' => '120'
-  },
-  'P211IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '130',
-    'width' => '120'
-  },
-  'P213I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144',
-    'width' => '132'
-  },
-  'P251IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144',
-    'width' => '132'
-  },
-  'P252I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144',
-    'width' => '132'
-  },
-  'P252IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144',
-    'width' => '132'
-  },
-  'P253I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144',
-    'width' => '132'
-  },
-  'P253IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144',
-    'width' => '132'
-  },
-  'P501I' => {
-    'color' => '',
-    'depth' => '2',
-    'height' => '120',
-    'width' => '96'
-  },
-  'P502I' => {
-    'color' => '',
-    'depth' => '4',
-    'height' => '117',
-    'width' => '96'
-  },
-  'P503I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '130',
-    'width' => '120'
-  },
-  'P503IS' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '130',
-    'width' => '120'
-  },
-  'P504I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144',
-    'width' => '132'
-  },
-  'P504IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '144',
-    'width' => '132'
-  },
-  'P505I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '266',
-    'width' => '240'
-  },
-  'P505IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '266',
-    'width' => '240'
-  },
-  'P506IC' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '266',
-    'width' => '240'
-  },
-  'P506ICII' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '266',
-    'width' => '240'
-  },
-  'P651PS' => {
-    'color' => '',
-    'depth' => '4',
-    'height' => '87',
-    'width' => '96'
   },
   'P700I' => {
     'color' => 1,
@@ -1657,12 +1261,6 @@ $DisplayMap ||= {
     'depth' => '262144',
     'height' => '350',
     'width' => '240'
-  },
-  'P821I' => {
-    'color' => '',
-    'depth' => '4',
-    'height' => '128',
-    'width' => '118'
   },
   'P851I' => {
     'color' => 1,
@@ -1754,30 +1352,6 @@ $DisplayMap ||= {
     'height' => '350',
     'width' => '240'
   },
-  'R209I' => {
-    'color' => '',
-    'depth' => '4',
-    'height' => '72',
-    'width' => '96'
-  },
-  'R211I' => {
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '98',
-    'width' => '96'
-  },
-  'R691I' => {
-    'color' => '',
-    'depth' => '4',
-    'height' => '72',
-    'width' => '96'
-  },
-  'R692I' => {
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '98',
-    'width' => '96'
-  },
   'SA700IS' => {
     'color' => 1,
     'depth' => '65536',
@@ -1844,6 +1418,12 @@ $DisplayMap ||= {
     'height' => '592',
     'width' => '480'
   },
+  'SH03D' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '656',
+    'width' => '480'
+  },
   'SH04A' => {
     'color' => 1,
     'depth' => '16777216',
@@ -1862,7 +1442,7 @@ $DisplayMap ||= {
     'height' => '656',
     'width' => '480'
   },
-  'SH05A' => {
+  'SH05A3' => {
     'color' => 1,
     'depth' => '16777216',
     'height' => '592',
@@ -1880,7 +1460,13 @@ $DisplayMap ||= {
     'height' => '592',
     'width' => '480'
   },
-  'SH06A' => {
+  'SH05D' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '656',
+    'width' => '480'
+  },
+  'SH06A3' => {
     'color' => 1,
     'depth' => '16777216',
     'height' => '592',
@@ -1898,7 +1484,7 @@ $DisplayMap ||= {
     'height' => '592',
     'width' => '480'
   },
-  'SH07A' => {
+  'SH07A3' => {
     'color' => 1,
     'depth' => '16777216',
     'height' => '592',
@@ -1940,47 +1526,23 @@ $DisplayMap ||= {
     'height' => '656',
     'width' => '480'
   },
+  'SH10C' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '656',
+    'width' => '480'
+  },
+  'SH11C' => {
+    'color' => 1,
+    'depth' => '16777216',
+    'height' => '656',
+    'width' => '480'
+  },
   'SH2101V' => {
     'color' => 1,
     'depth' => '65536',
     'height' => '600',
     'width' => '800'
-  },
-  'SH251I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '130',
-    'width' => '120'
-  },
-  'SH251IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '187',
-    'width' => '176'
-  },
-  'SH252I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252',
-    'width' => '240'
-  },
-  'SH505I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252',
-    'width' => '240'
-  },
-  'SH505IS' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252',
-    'width' => '240'
-  },
-  'SH506IC' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '252',
-    'width' => '240'
   },
   'SH700I' => {
     'color' => 1,
@@ -2047,12 +1609,6 @@ $DisplayMap ||= {
     'depth' => '16777216',
     'height' => '320',
     'width' => '240'
-  },
-  'SH821I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '78',
-    'width' => '96'
   },
   'SH851I' => {
     'color' => 1,
@@ -2136,102 +1692,6 @@ $DisplayMap ||= {
     'color' => 1,
     'depth' => '16777216',
     'height' => '320',
-    'width' => '240'
-  },
-  'SO210I' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '113',
-    'width' => '120'
-  },
-  'SO211I' => {
-    'color' => 1,
-    'depth' => '4096',
-    'height' => '112',
-    'width' => '120'
-  },
-  'SO212I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '112',
-    'width' => '120'
-  },
-  'SO213I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '112',
-    'width' => '120'
-  },
-  'SO213IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '112',
-    'width' => '120'
-  },
-  'SO213IWR' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '112',
-    'width' => '120'
-  },
-  'SO502I' => {
-    'color' => '',
-    'depth' => '4',
-    'height' => '120',
-    'width' => '120'
-  },
-  'SO502IWM' => {
-    'color' => 1,
-    'depth' => '256',
-    'height' => '113',
-    'width' => '120'
-  },
-  'SO503I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '113',
-    'width' => '120'
-  },
-  'SO503IS' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '113',
-    'width' => '120'
-  },
-  'SO504I' => {
-    'color' => 1,
-    'depth' => '65536',
-    'height' => '112',
-    'width' => '120'
-  },
-  'SO505I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '240',
-    'width' => '256'
-  },
-  'SO505IS' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '256',
-    'width' => '240'
-  },
-  'SO506I' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '256',
-    'width' => '240'
-  },
-  'SO506IC' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '256',
-    'width' => '240'
-  },
-  'SO506IS' => {
-    'color' => 1,
-    'depth' => '262144',
-    'height' => '256',
     'width' => '240'
   },
   'SO702I' => {

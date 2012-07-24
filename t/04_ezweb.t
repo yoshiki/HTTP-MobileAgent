@@ -1,5 +1,5 @@
 use strict;
-use Test::More tests => 535;
+use Test::More tests => 549;
 
 BEGIN { use_ok 'HTTP::MobileAgent' }
 
@@ -29,6 +29,9 @@ my @Tests = (
     [ 'KDDI-KC42 UP.Browser/6.2_7.2.7.1.K.6.210 (GUI) MMP/2.0',
       '6.2_7.2.7.1.K.6.210 (GUI)', 'KC42', 'MMP/2.0', 1, undef, undef, 1,
       1, undef, undef ],
+    [ 'KDDI-KC46 UP.Browser/6.2_7.2.7.1.K.7.108 (GUI) MMP/2.0',
+      '6.2_7.2.7.1.K.7.108 (GUI)', 'KC46', 'MMP/2.0', 1, undef, undef, 1,
+      1, undef, 'A400971224403120' ],
 );
 
 for (@Tests) {
