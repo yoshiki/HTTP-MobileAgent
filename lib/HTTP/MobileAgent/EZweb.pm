@@ -78,7 +78,7 @@ sub _make_display {
 sub gps_compliant {
     my $self = shift;
     my @specs = split //, $self->get_header('x-up-devcap-multimedia') || '';
-    return defined $specs[ 1 ] && $specs[ 1 ] =~ /^[23]$/;
+    return defined $specs[ 1 ] && $specs[ 1 ] =~ /^[234]$/;
 }
 
 sub user_id {
